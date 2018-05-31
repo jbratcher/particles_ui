@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+
+    <head>
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Customize Particles</title>
+        <!--build:css css/styles.min.css-->
+        <link rel="stylesheet" href="src/css/vendor/font-awesome.min.css">
+        <link rel="stylesheet" href="src/css/styles.css">
+        <!--endbuild-->
+
+    </head>
+
+    <body>
+
+        <header>
+
+          <h1 class="name">Customize Particles</h1>
+
+          <a href="#nav-mobile" id="menu-toggle" class="toggle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+
+          <nav id="nav-mobile">
+              <ul>
+                  <li><a id="nav-close" class="toggle" href="#"><i class="fa fa-times fa-2x"></i></a></li>
+                  <li><a href="#services">New</a></li>
+                  <li><a href="#home">Save</a></li>
+                  <li><a href="#work">Get Snippet</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </nav>
+
+        </header>
+
+        <main>
+
+          <section id="controls">
+
+            <form id="controls-form">
+
+              <label for="color">Color</label>
+              <input id="color" type="text" name="color" value="#fff">
+              <label for="radius">Radius</label>
+              <input id="radius" type="text" name="radius" value="1">
+              <label for="xspeed">Horizontal Speed</label>
+              <input id="xspeed" type="text" name="xspeed" name="xspeed" value="1">
+              <label for="yspeed">Vertical Speed</label>
+              <input type="text">
+
+              <button>Customize</button>
+
+            </form>
+
+          </section>
+
+          <section id="canvas-display">
+
+            <canvas id="main-canvas"></canvas>
+
+          </section>
+        </main>
+
+
+    <!--build:js js/main.min.js -->
+    <script async src="src/js/main.js"></script>
+    <script async src="src/js/index.js"></script>
+    <script async src="src/js/wobbleup.js"></script>
+    <!-- endbuild -->
+
+    </body>
+
+</html>
