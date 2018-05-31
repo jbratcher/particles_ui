@@ -107,7 +107,7 @@ header {
 
 // Main section
 
-main, form {
+main {
   display: flex;
   flex-direction: row;
 }
@@ -116,7 +116,7 @@ main, form {
   
 }
 
-form {
+#controls-form {
   display: flex;
   flex-direction: column;
 }

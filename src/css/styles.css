@@ -62,11 +62,11 @@ header {
       text-decoration: none;
       opacity: 0.5; }
 
-main, form {
+main {
   display: flex;
   flex-direction: row; }
 
-form {
+#controls-form {
   display: flex;
   flex-direction: column; }
 

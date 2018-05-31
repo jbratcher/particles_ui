@@ -1,10 +1,10 @@
-# Gulp Live Reload Dev Environment
+# Particles UI
 
-Live Reload via Gulp for SASS
+A UI for the Canvas Particles Library
 
 ### Version
 
-1.0.6
+0.0.1
 
 ## Install Dependencies
 
@@ -30,15 +30,15 @@ npm start
 /src
     /css
     styles.css
+        /fonts
+        -fontawesome-webfont.eot
+        -fontawesome-webfont.svg
+        -fontawesome-webfont.ttf
+        -fontawesome-webfont.wotf
+        -fontawesome-webfont.wotf2
+        -FontAwesome.otf
         /vendor
         -font-awesome.min.css
-    /fonts
-    -fontawesome-webfont.eot
-    -fontawesome-webfont.svg
-    -fontawesome-webfont.ttf
-    -fontawesome-webfont.wotf
-    -fontawesome-webfont.wotf2
-    -FontAwesome.otf
     /img
     /js
         -index.js
@@ -70,37 +70,21 @@ gulp clean:dist
 
 ## Features: 
 
-* Sass compiles in to CSS 
-* JS and CSS are bundled and minified
-* Images are optimized and cached
-* Font Awesome icons are loaded
-* Server is started and refreshes on save
-* Autoprefix CSS
-* Complile ES6 to ES5
-* Written in ES6
+
 
 
 ## Future Features:
 
-* Cleaner workflow
-* Webpack
+
 
 
 ## Known "bugs"
 
-* 'browerSync' task not allowing sass to reload, hotfixed
 
 
 #### Change Log
 
-###### 1.0.6
+###### 0.0.1
 
-* Converted to ES6, fixed JS, CSS bug with minified files
+* Initial commit
 
-###### 1.0.5
-
-* Upgraded to Gulp v4
-
-###### 1.0.4
-
-* Removed jsuglify to use babel complier, will work on fix
