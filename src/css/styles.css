@@ -64,11 +64,25 @@ header {
 
 main {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
 
 #controls-form {
   display: flex;
   flex-direction: column; }
+  #controls-form .input-box {
+    padding: 0.5rem 0; }
+    #controls-form .input-box > input {
+      border-radius: 0.25rem;
+      margin-top: 0.5rem; }
+  #controls-form > button {
+    background: lightblue;
+    background: radial-gradient(circle at top left, #4D75CC 0%, #03256C 50%);
+    border: 0.125rem solid #001035;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 1rem; }
 
 @media (min-width: 768px) {
   header {
@@ -89,4 +103,8 @@ main {
           header #nav-mobile ul li:last-of-type {
             padding-bottom: 1rem; }
     header #menu-toggle, header .toggle {
-      display: none; } }
+      display: none; }
+  main {
+    flex-direction: row; }
+    main #controls {
+      padding: 2.5vw 20vw 0 2.5vw; } }

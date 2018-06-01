@@ -109,17 +109,41 @@ header {
 
 main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-#controls {
-  
-}
+// Controls section
 
 #controls-form {
   display: flex;
   flex-direction: column;
+  
+  .input-box {
+    padding: 0.5rem 0;
+    
+    &>input {
+      border-radius: 0.25rem;
+      margin-top: 0.5rem;
+      
+    }
+    
+  }
+  
+  &>button {
+    background: lightblue;
+    background: radial-gradient(circle at top left, #4D75CC 0%, #03256C 50%);
+    border: 0.125rem solid #001035;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
 }
+
+// Canvas section
+
 
 #canvas-display {
 
@@ -128,6 +152,8 @@ main {
 #main-canvas {
 
 }
+
+
 
 
 
@@ -178,6 +204,16 @@ main {
             display: none;
         }
 
+    }
+    
+    main {
+      
+      flex-direction: row;
+      
+      #controls {
+        padding: 2.5vw 20vw 0 2.5vw;
+      }
+      
     }
 
 }
