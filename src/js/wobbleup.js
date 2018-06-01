@@ -45,6 +45,12 @@ function randomIntFromRange(min, max) {
     return Math.random() * (max - min + 1) + min;
 }
 
+function getRandomColor() {
+  var color = '#';
+  color += ((1<<24)*Math.random()|0).toString(16);
+  return color;
+}
+
 // Create Circle function
 
 function Circle(x,y,dx,dy,rad,color, boundaryRight, boundaryLeft) {
@@ -133,9 +139,10 @@ function init() {
         var y = Math.random() * (window.innerHeight - rad * 2);
         var dx = 0.2;
         var dy = -randomIntFromRange(0.2,0.3);
-        var color = "black";
+        var color = getRandomColor();
         var boundaryRight = x + rad;
         var boundaryLeft = x - rad;
+        console.log(color);
         circles.push(new Circle(x,y,dx,dy,rad,color,boundaryRight,boundaryLeft));
     }
 
