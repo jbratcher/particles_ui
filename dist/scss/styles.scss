@@ -118,9 +118,13 @@ main {
 
 #controls {
   background: #03256C;
-  background: radial-gradient(circle at top left, #4D75CC 0%, #03256C 50%);
+  background: radial-gradient(circle at top left, #7b99da 0%, #064cdf 50%);
   box-shadow: 0 0.5rem 1rem #636363;
-  padding: 1rem 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
 }
 
 #controls-form {
@@ -139,14 +143,13 @@ main {
   }
   
   &>button {
-    background: #03256C;
-    background: radial-gradient(circle at top left, #03256C 0%, #4D75CC 50%);
+    background: #7b99da;
     border: 0.125rem solid #001035;
     border-radius: 1rem;
     color: #fff;
     font-size: 1rem;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
 }
@@ -219,9 +222,10 @@ main {
     main {
       
       flex-direction: row;
+      justify-content: center;
       
       #controls {
-        padding: 2.5vw 20vw 0 2.5vw;
+        padding: 5rem 2rem
       }
       
     }

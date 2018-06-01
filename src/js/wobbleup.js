@@ -142,7 +142,6 @@ function init() {
         var color = getRandomColor();
         var boundaryRight = x + rad;
         var boundaryLeft = x - rad;
-        console.log(color);
         circles.push(new Circle(x,y,dx,dy,rad,color,boundaryRight,boundaryLeft));
     }
 
