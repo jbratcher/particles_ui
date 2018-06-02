@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 html, body {
   background: #fefefe;
   color: #333;
@@ -25,7 +29,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 20vh;
   padding: 1rem;
 
   h1 {
@@ -111,7 +114,7 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  width: 100vw;
 }
 
 // Controls section
