@@ -10,7 +10,8 @@ html, body {
   background: #fefefe;
   color: #333;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  width: 100vw; }
 
 ul {
   list-style-type: none; }
