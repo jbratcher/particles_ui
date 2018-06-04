@@ -1,16 +1,17 @@
 "use strict";
 
 // Drawing and animating circles with random velocity and color
+// Circles 'float' up to the top of the canvas and loop back to the bottom on repeat
 
 // Report JS file connected
 
 console.log("js connected");
 
-// Set up the canvas and make full screen
+// Set up the canvas and size to container #canvas-display
 
 var canvas = document.querySelector("#main-canvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
 
 // Set 2D context
 
