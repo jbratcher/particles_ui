@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Drawing and animating circles with random velocity and color
 // Circles 'float' up to the top of the canvas and loop back to the bottom on repeat
@@ -9,7 +9,25 @@ console.log("js connected");
 
 // Declare variables
 
+// Get color input
+
 var colorInput = document.querySelector('#color');
+var selectedColor = colorInput.value;
+
+// Get radius input
+
+var radInput = document.querySelector('#radius');
+var selectedRad = radInput.value;
+
+// Get horizontal speed input
+
+var hInput = document.querySelector('#xspeed');
+var selectedHspeed = hInput.value;
+
+// Get vertical speed input
+
+var vInput = document.querySelector('#yspeed');
+var selectedVSpeed = vInput.value;
 
 // Set up the canvas and size to container #canvas-display
 
@@ -37,7 +55,6 @@ var submitButton = document.querySelector('#submitChanges');
 // Submit Changes when form button is clicked
 
 submitButton.addEventListener('click', function () {
-    canvas.style.color = colorInput.value;
     init();
 });
 
@@ -99,11 +116,21 @@ function Circle(x, y, dx, dy, rad, color, boundaryRight, boundaryLeft) {
 
         if (this.y + this.rad < 0) {
             this.y = window.innerHeight;
+        } else if (this.y + this.rad > window.innerHeight) {
+            this.y = 0;
         }
 
-        if (this.x > boundaryRight || this.x < boundaryLeft) {
-            this.dx = -this.dx;
+        if (this.x + this.rad < 0) {
+            this.x = window.innerWidth;
+        } else if (this.x + this.rad > window.innerWidth) {
+            this.x = 0;
         }
+
+        // // Change x direction if particle hits defined boundary
+        //
+        // if(this.x > boundaryRight || this.x < boundaryLeft) {
+        //     this.dx = -this.dx;
+        // }
 
         // Increment position (x,y)
 
@@ -148,11 +175,11 @@ function init() {
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
     for (var i = 0; i < 100; i++) {
-        var rad = randomIntFromRange(2, 4);
+        var rad = Math.abs(radInput.value) || randomIntFromRange(2, 4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = 0.2;
-        var dy = -randomIntFromRange(0.2, 0.3);
+        var dx = hInput.value || randomIntFromRange(0.2, 0.3);
+        var dy = -vInput.value || -randomIntFromRange(0.2, 0.3);
         var color = colorInput.value || getRandomColor();
         var boundaryRight = x + rad;
         var boundaryLeft = x - rad;

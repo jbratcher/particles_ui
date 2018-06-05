@@ -11,6 +11,7 @@ html, body {
   color: #eee;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   width: 100%;
   height: 100%; }
 
@@ -93,20 +94,24 @@ main {
 
 #controls-form {
   display: flex;
-  flex-direction: column;
-  font-size: 1.5rem; }
+  flex-direction: column; }
   #controls-form .input-box {
-    padding: 0.5rem 0; }
+    padding: 0.5rem 0;
+    text-align: center; }
+    #controls-form .input-box > label {
+      font-size: 1.5rem;
+      white-space: nowrap; }
     #controls-form .input-box > input {
       border-radius: 0.25rem;
-      margin-top: 0.5rem; }
+      margin-top: 0.5rem;
+      padding: 0.75rem 0; }
   #controls-form > button {
-    background: #1D4475;
+    background: #0934ff;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
     color: #eee;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0; }
 
@@ -131,6 +136,10 @@ footer {
         color: #eee;
         font-size: 1rem;
         text-decoration: none; }
+  footer #to-top a {
+    color: #eee; }
+    footer #to-top a i.fa {
+      animation: 3s ease-in-out 0.5s infinite forwards alternate bounceup; }
 
 @media (min-width: 768px) {
   header {
@@ -171,3 +180,15 @@ footer {
       justify-content: space-around; }
       footer #menu-links ul li {
         padding: 0 0.5rem; } }
+
+@keyframes bounceup {
+  0% {
+    transform: translateY(-0.5rem); }
+  25% {
+    transform: translateY(-1rem); }
+  50% {
+    transform: translateY(-0.5rem); }
+  75% {
+    transform: translateY(-1rem); }
+  100% {
+    transform: translateY(-0.5rem); } }

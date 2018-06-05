@@ -6,8 +6,8 @@
   padding: 0;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 html, body {
@@ -15,6 +15,7 @@ html, body {
   color: #eee;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   width: 100%;
   height: 100%;
 }
@@ -40,11 +41,9 @@ header {
   z-index: 1;
 
   h1 {
-
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     white-space: pre;
-
   }
 
   #menu-toggle {
@@ -143,26 +142,32 @@ main {
 #controls-form {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
-  
+
   .input-box {
     padding: 0.5rem 0;
-    
+    text-align: center;
+
+    &>label {
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+
     &>input {
       border-radius: 0.25rem;
       margin-top: 0.5rem;
-      
+      padding: 0.75rem 0;
+
     }
-    
+
   }
-  
+
   &>button {
-    background: #1D4475;
+    background: #0934ff;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.4);
     color: #eee;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0;
   }
@@ -184,34 +189,37 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  
+
   #menu-links ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
-    
+
     li {
-      
+
       padding: 0.5rem 0;
-      
+
       a {
         color: #eee;
         font-size: 1rem;
         text-decoration: none;
       }
-    
+
     }
-    
+
   }
-  
+
+  #to-top a {
+    color: #eee;
+
+    i.fa {
+      animation: 3s ease-in-out 0.5s infinite forwards alternate bounceup;
+    }
+
+  }
+
 }
-
-
-
-
-
-
 
 /////////////////////////
 //    Media Queries    //
@@ -220,7 +228,7 @@ footer {
 @media (min-width: 768px) {
 
   header {
-  
+
     box-shadow: none;
     flex-direction: row;
     justify-content: space-around;
@@ -258,42 +266,64 @@ footer {
       }
 
   }
-    
+
   main {
-    
+
     box-shadow: none;
     flex-direction: row;
     position: relative;
     z-index: 1;
-    
+
     #controls {
       box-shadow: none;
       padding: 5rem 2rem;
     }
-    
+
     #main-canvas {
       box-shadow: inset 0 0 5rem rgba(0,0,0,1);
       width: 100%;
     }
-    
+
   }
-  
+
   footer {
-    
+
     padding: 3rem 0 1rem;
-    
+
     #menu-links ul {
       flex-direction: row;
       justify-content: space-around;
-      
+
       li {
-        
+
         padding: 0 0.5rem;
-      
+
       }
-      
+
     }
-  
+
   }
+
+}
+
+// Animations
+
+@keyframes bounceup {
+
+    0% {
+        transform: translateY(-0.5rem);
+    }
+    25% {
+        transform: translateY(-1rem);
+    }
+    50% {
+        transform: translateY(-0.5rem);
+    }
+    75% {
+        transform: translateY(-1rem);
+    }
+    100% {
+        transform: translateY(-0.5rem);
+    }
 
 }
