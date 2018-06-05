@@ -24,6 +24,10 @@ var mouse = {
     y: undefined
 };
 
+// Get color input
+
+var newColor = document.querySelector('#color').value;
+
 // Event Listeners
 
 // Capture Mouse movement
