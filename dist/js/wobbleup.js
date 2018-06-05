@@ -7,6 +7,10 @@
 
 console.log("js connected");
 
+// Declare variables
+
+var colorInput = document.querySelector('#color');
+
 // Set up the canvas and size to container #canvas-display
 
 var canvas = document.querySelector("#main-canvas");
@@ -24,11 +28,18 @@ var mouse = {
     y: undefined
 };
 
-// Get color input
+// Get button element
 
-var newColor = document.querySelector('#color').value;
+var submitButton = document.querySelector('#submitChanges');
 
 // Event Listeners
+
+// Submit Changes when form button is clicked
+
+submitButton.addEventListener('click', function () {
+    canvas.style.color = colorInput.value;
+    init();
+});
 
 // Capture Mouse movement
 
@@ -142,7 +153,7 @@ function init() {
         var y = Math.random() * (window.innerHeight - rad * 2);
         var dx = 0.2;
         var dy = -randomIntFromRange(0.2, 0.3);
-        var color = getRandomColor();
+        var color = colorInput.value || getRandomColor();
         var boundaryRight = x + rad;
         var boundaryLeft = x - rad;
         circles.push(new Circle(x, y, dx, dy, rad, color, boundaryRight, boundaryLeft));
