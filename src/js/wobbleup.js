@@ -7,7 +7,26 @@ console.log("js connected");
 
 // Declare variables
 
-const colorInput = document.querySelector('#color');
+// Get color input
+
+var colorInput = document.querySelector('#color');
+var selectedColor = colorInput.value;
+var test = document.querySelector('#color').value;
+
+// Get radius input
+
+var radInput = document.querySelector('#radius');
+var selectedRad = radInput.value;
+
+// Get horizontal speed input
+
+var hInput = document.querySelector('#xspeed');
+var selectedHspeed = hInput.value;
+
+// Get vertical speed input
+
+var vInput = document.querySelector('#yspeed');
+var selectedVSpeed = vInput.value;
 
 // Set up the canvas and size to container #canvas-display
 
@@ -35,7 +54,6 @@ const submitButton = document.querySelector('#submitChanges');
 // Submit Changes when form button is clicked
 
 submitButton.addEventListener('click', () => {
-  canvas.style.color = colorInput.value;
   init();
 });
 
@@ -62,7 +80,7 @@ function randomIntFromRange(min, max) {
 }
 
 function getRandomColor() {
-  var color = '#';
+  let color = '#';
   color += ((1<<24)*Math.random()|0).toString(16);
   return color;
 }
@@ -150,11 +168,11 @@ function init() {
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
     for (var i = 0; i < 100; i++) {
-        var rad = randomIntFromRange(2,4);
+        var rad = radInput.value || randomIntFromRange(2,4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = 0.2;
-        var dy = -randomIntFromRange(0.2,0.3);
+        var dx = hInput.value || 0.2;
+        var dy = -vInput.value || -randomIntFromRange(0.2,0.3);
         var color = colorInput.value || getRandomColor();
         var boundaryRight = x + rad;
         var boundaryLeft = x - rad;
