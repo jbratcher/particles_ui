@@ -101,10 +101,15 @@ main {
     #controls-form .input-box > label {
       font-size: 1.5rem;
       white-space: nowrap; }
-    #controls-form .input-box > input {
+    #controls-form .input-box > input, #controls-form .input-box > select, #controls-form .input-box > option {
       border-radius: 0.25rem;
       margin-top: 0.5rem;
       padding: 0.75rem 0; }
+    #controls-form .input-box > select {
+      background: #fefefe;
+      font-size: 0.5rem;
+      padding: 1rem;
+      width: 40vw; }
   #controls-form > button {
     background: #0934ff;
     border: none;

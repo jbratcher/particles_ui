@@ -7,6 +7,8 @@ console.log("js connected");
 
 // Declare variables
 
+// Get user inputs from controls form
+
 // Get color input
 
 var colorInput = document.querySelector('#color');
@@ -115,18 +117,16 @@ function Circle(x,y,dx,dy,rad,color, boundaryRight, boundaryLeft) {
 
         if(this.y + this.rad < 0) {
             this.y = window.innerHeight;
-        } else if(this.y + this.rad > window.innerHeight) {
-          this.y = 0;
+        } else if(this.y - this.rad > window.innerHeight) {
+            this.y = 0;
         }
 
         if(this.x + this.rad < 0) {
             this.x = window.innerWidth;
-        } else if(this.x + this.rad > window.innerWidth) {
+        } else if(this.x - this.rad > window.innerWidth) {
           this.x = 0;
         }
 
-        // // Change x direction if particle hits defined boundary
-        //
         // if(this.x > boundaryRight || this.x < boundaryLeft) {
         //     this.dx = -this.dx;
         // }
@@ -180,7 +180,7 @@ function init() {
         var rad = Math.abs(radInput.value) || randomIntFromRange(2,4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = hInput.value || randomIntFromRange(0.2,0.3);
+        var dx = parseInt(hInput.value) || 0.2;
         var dy = -vInput.value || -randomIntFromRange(0.2,0.3);
         var color = colorInput.value || getRandomColor();
         var boundaryRight = x + rad;
