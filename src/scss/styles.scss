@@ -160,9 +160,9 @@ main {
 
     &>select {
       background: #fefefe;
-      font-size: 0.5rem;
+      font-size: 0.75rem;
       padding: 1rem;
-      width: 40vw;
+      width: 100%;
     }
 
   }
@@ -212,15 +212,6 @@ footer {
         text-decoration: none;
       }
 
-    }
-
-  }
-
-  #to-top a {
-    color: #eee;
-
-    i.fa {
-      animation: 3s ease-in-out 0.5s infinite forwards alternate bounceup;
     }
 
   }
@@ -309,27 +300,5 @@ footer {
     }
 
   }
-
-}
-
-// Animations
-
-@keyframes bounceup {
-
-    0% {
-        transform: translateY(-0.5rem);
-    }
-    25% {
-        transform: translateY(-1rem);
-    }
-    50% {
-        transform: translateY(-0.5rem);
-    }
-    75% {
-        transform: translateY(-1rem);
-    }
-    100% {
-        transform: translateY(-0.5rem);
-    }
 
 }
