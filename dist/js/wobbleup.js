@@ -122,7 +122,7 @@ function Circle(x, y, dx, dy, rad, color) {
 
         // Get Wall value from input and set logic appropriately
 
-        if (selectedWall === 'wall') {
+        if (walls.value === 'wall') {
 
             // Change y direction when wall is hit
 
@@ -135,9 +135,12 @@ function Circle(x, y, dx, dy, rad, color) {
             if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
             }
-        } else if (selectedWall === 'nowall') {
+        } else if (walls.value === 'nowall') {
 
             // Move to bottom if top if reached, to top if bottom is reached
+
+            this.dx = this.dy;
+            this.dy = this.dy;
 
             if (this.y < 0) {
                 this.y = window.innerHeight;
