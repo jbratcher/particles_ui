@@ -91,17 +91,13 @@ function getRandomColor() {
 
 // Create Circle function
 
-function Circle(x,y,dx,dy,rad,color, boundaryRight, boundaryLeft) {
+function Circle(x,y,dx,dy,rad,color) {
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
     this.rad = rad;
     this.color = color;
-    this.boundaryRight = boundaryRight;
-    this.boundaryLeft = boundaryLeft;
-    var minRad = rad;
-    var maxRad = (rad * 2);
 
     // Draw circle function
 
@@ -115,6 +111,13 @@ function Circle(x,y,dx,dy,rad,color, boundaryRight, boundaryLeft) {
     // Update circle position for animation
 
     this.update = function() {
+        
+        // Increment position (x,y)
+
+        this.x += this.dx;
+        this.y += this.dy;
+
+        // Draw Circle
 
         // Get Wall value from input and set logic appropriately
         
@@ -164,36 +167,7 @@ function Circle(x,y,dx,dy,rad,color, boundaryRight, boundaryLeft) {
             
         }
 
-        // if(this.x > boundaryRight || this.x < boundaryLeft) {
-        //     this.dx = -this.dx;
-        // }
-
-        // Increment position (x,y)
-
-        this.x += this.dx;
-        this.y += this.dy;
-
-        // Interactivity (mouse and circles)
-
-        // Mouse detection for circle
-
-        // if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50) {
-
-        //     // Limit circle grow size
-
-        //     if (this.rad < maxRad) {
-        //         this.rad += 1;
-        //     }
-
-        // // Limit circle shrink size
-
-        // } else if (this.rad > minRad) {
-        //     this.rad -= 1;
-        // } else if (this.rad < this.minRad) {
-        //     this.rad += 1;
-        // }
-
-        // Draw Circle
+        
 
         this.draw();
 
@@ -217,12 +191,10 @@ function init() {
         var rad = Math.abs(radInput.value) || randomIntFromRange(2,4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = parseInt(hInput.value) || randomIntFromRange(0.1, 3);
-        var dy = -vInput.value || -randomIntFromRange(0.1, 3);
+        var dx = parseInt(hInput.value,10) || randomIntFromRange(0.1, 3);
+        var dy = parseInt(-vInput.value,10) || -randomIntFromRange(0.1, 3);
         var color = colorInput.value || getRandomColor();
-        var boundaryRight = x + rad;
-        var boundaryLeft = x - rad;
-        circles.push(new Circle(x,y,dx,dy,rad,color,boundaryRight,boundaryLeft));
+        circles.push(new Circle(x,y,dx,dy,rad,color));
     }
 
 }
