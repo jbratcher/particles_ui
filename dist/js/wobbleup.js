@@ -126,28 +126,20 @@ function Circle(x, y, dx, dy, rad, color) {
 
             // Change y direction when wall is hit
 
-            if (this.y < 0) {
+            if (this.y + this.rad > window.innerHeight || this.y - this.rad < 0) {
                 this.dy = -this.dy;
-            } else if (this.y > window.innerHeight) {
-                this.dy = -this.dy;
-            } else {
-                this.dy = this.dy;
             }
 
             // Change x direction when wall is hit
 
-            if (this.x < 0) {
-                this.dx = -this.dx;
-            } else if (this.x > window.innerHeight) {
-                this.dx = -this.dx;
-            } else {
+            if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
             }
         } else if (selectedWall === 'nowall') {
 
             // Move to bottom if top if reached, to top if bottom is reached
 
-            if (this.dy < 0) {
+            if (this.y < 0) {
                 this.y = window.innerHeight;
             } else if (this.y > window.innerHeight) {
                 this.y = 0;
