@@ -40,69 +40,82 @@
           <section id="controls">
 
             <form id="controls-form">
+              
+              <section class="form-column">
+                
+                <section class="input-box">
+  
+                  <label for="color">Color</label>
+                  <br />
+                  <input id="color" type="text" name="color">
+  
+                </section>
 
-              <section class="input-box">
-
-                <label for="color">Color</label>
-                <br />
-                <input id="color" type="text" name="color">
-
+                <section class="input-box">
+  
+                  <label for="radius">Radius</label>
+                  <br />
+                  <input id="radius" type="text" name="radius" value="4">
+  
+                </section>
+                  
               </section>
 
-              <section class="input-box">
+              <section class="form-column">
 
-                <label for="radius">Radius</label>
-                <br />
-                <input id="radius" type="text" name="radius" value="4">
 
-              </section>
-
-              <section class="input-box">
-
-                <label for="xspeed">Horizontal Speed</label>
-                <br />
-                <input id="xspeed" type="text" name="xspeed" value="3">
-
+                <section class="input-box">
+  
+                  <label for="xspeed">Horizontal Speed</label>
+                  <br />
+                  <input id="xspeed" type="text" name="xspeed" value="">
+  
+                </section>
+                
+                <section class="input-box">
+  
+                  <label for="xfactor">Hor Speed Factor</label>
+                  <br />
+                  <input id="xfactor" type="text" name="xfactor" value="">
+  
+                </section>
+  
+                <section class="input-box">
+  
+                  <label for="yspeed">Vertical Speed</label>
+                  <br />
+                  <input id="yspeed" type="text" name="yspeed" value="">
+  
+                </section>
+                
+                <section class="input-box">
+  
+                  <label for="yfactor">Vert Speed Factor</label>
+                  <br />
+                  <input id="yfactor" type="text" name="yfactor" value="">
+  
+                </section>
+                
               </section>
               
-              <section class="input-box">
+              <section class="form-column">
+                
+                <section class="input-box">
 
-                <label for="xfactor">Hor Speed Factor</label>
-                <br />
-                <input id="xfactor" type="text" name="xfactor" value="">
+                  <label for="walls">Wall Effect</label>
+                  <br />
+                  <select id="walls" type="text" name="walls" value="nowalls">
+  
+                    <option value="wall">Wall (Particles Bounce)</option>
+                    <option value="nowall">No Wall (Particles Pass Through)</option>
+  
+                  </select>
+  
+                </section>
 
+                <button id="submitChanges" type="button">Customize</button>
+                
               </section>
-
-              <section class="input-box">
-
-                <label for="yspeed">Vertical Speed</label>
-                <br />
-                <input id="yspeed" type="text" name="yspeed" value="4">
-
-              </section>
-              
-              <section class="input-box">
-
-                <label for="yfactor">Vert Speed Factor</label>
-                <br />
-                <input id="yfactor" type="text" name="yfactor" value="">
-
-              </section>
-
-              <section class="input-box">
-
-                <label for="walls">Wall Effect</label>
-                <br />
-                <select id="walls" type="text" name="walls" value="nowalls">
-
-                  <option value="wall">Wall (Particles Bounce)</option>
-                  <option value="nowall">No Wall (Particles Pass Through)</option>
-
-                </select>
-
-              </section>
-
-              <button id="submitChanges" type="button">Customize</button>
 
             </form>
 

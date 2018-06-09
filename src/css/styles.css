@@ -112,7 +112,7 @@ main {
       font-size: 0.75rem;
       padding: 1rem;
       width: 100%; }
-  #controls-form > button {
+  #controls-form #submitChanges {
     background: #0934ff;
     border: none;
     border-radius: 1rem;
@@ -120,7 +120,8 @@ main {
     color: #eee;
     font-size: 1.25rem;
     margin-top: 2rem;
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    width: 100%; }
 
 #main-canvas {
   min-height: 80vh; }
@@ -173,6 +174,18 @@ footer {
     main #controls {
       box-shadow: none;
       padding: 5rem 2rem; }
+    main #controls-form {
+      display: flex;
+      flex-direction: row; }
+      main #controls-form .form-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        main #controls-form .form-column .input-box {
+          padding: 1rem 2rem;
+          width: 20vw; }
+    main #submitChanges {
+      max-width: 80%; }
     main #main-canvas {
       box-shadow: inset 0 0 5rem black;
       width: 100%; }
