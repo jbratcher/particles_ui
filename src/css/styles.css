@@ -20,7 +20,7 @@ ul {
 
 header {
   background: #262626;
-  background: radial-gradient(ellipse at top center, #393939, #262626);
+  background: radial-gradient(ellipse at top left, #393939, #262626);
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   color: #eee;
   display: flex;
@@ -44,6 +44,7 @@ header {
       transition: all 0.5s ease-in-out; }
   header #nav-mobile {
     background: inherit;
+    box-shadow: none;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -53,6 +54,7 @@ header {
     transition: all 0.5s ease-in-out;
     width: 100vw; }
     header #nav-mobile:target {
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
       transform: translateY(20rem); }
     header #nav-mobile ul {
       display: flex;
@@ -84,7 +86,7 @@ main {
 
 #controls {
   background: #335884;
-  background: radial-gradient(circle at center center, #335884 0%, #004293 100%);
+  background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   color: #fff;
   display: flex;

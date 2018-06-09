@@ -26,10 +26,18 @@ var selectedRad = radInput.value;
 var hInput = document.querySelector('#xspeed');
 var selectedHspeed = hInput.value;
 
+// Add speed factor (num range randomized for variable speed)
+var hsfInput = document.querySelector('#xfactor');
+var selectedHSF = hsfInput.value;
+
 // Get vertical speed input
 
 var vInput = document.querySelector('#yspeed');
 var selectedVSpeed = vInput.value;
+
+// Add speed factor (num range randomized for variable speed)
+var vsfInput = document.querySelector('#yfactor');
+var selectedVSF = vsfInput.value;
 
 var walls = document.querySelector('#walls');
 var selectedWall = walls.value;
@@ -181,8 +189,8 @@ function init() {
         var rad = Math.abs(radInput.value) || randomIntFromRange(2, 4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = parseInt(hInput.value, 10) || randomIntFromRange(0.1, 3);
-        var dy = parseInt(-vInput.value, 10) || -randomIntFromRange(0.1, 3);
+        var dx = parseInt(hInput.value, 10) * randomIntFromRange(0, hsfInput.value) || randomIntFromRange(0.1, 3);
+        var dy = parseInt(-vInput.value, 10) * randomIntFromRange(0, vsfInput.value) || -randomIntFromRange(0.1, 3);
         var color = colorInput.value || getRandomColor();
         circles.push(new Circle(x, y, dx, dy, rad, color));
     }
