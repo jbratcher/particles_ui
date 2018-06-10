@@ -1,10 +1,10 @@
 # Particles UI
 
-A UI for the Canvas Particles Library
+A UI for the Canvas Particles Library [link]([I'm an inline-style link](https://www.google.com))
 
 ### Version
 
-0.0.1
+0.0.3
 
 ## Install Dependencies
 
@@ -70,20 +70,33 @@ gulp clean:dist
 
 ## Features: 
 
-
+* Uses Canvas Particle library to generate colored particles
+* Uses HTML5 canvas to display particles
+* Flexbox w/ media queries for responsiveness
+* JS animation frames to continually update animation
 
 
 ## Future Features:
 
-
+* expandable menu for large layout sizes
+* more options such as number of particles, random colors, etc.
 
 
 ## Known "bugs"
 
-
+* At 768x and above, canvas extends past viewport width on right side
 
 #### Change Log
 
+###### 0.0.3
+
+* Added wall/nowall option, changed large layout for controls to columns
+
+###### 0.0.2
+
+* Added more options for customization, styling for interface
+
+ 
 ###### 0.0.1
 
 * Initial commit
