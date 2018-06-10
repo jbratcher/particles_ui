@@ -134,13 +134,13 @@ function Circle(x, y, dx, dy, rad, color) {
 
             // Change y direction when wall is hit
 
-            if (this.y + this.rad > window.innerHeight || this.y - this.rad < 0) {
+            if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {
                 this.dy = -this.dy;
             }
 
             // Change x direction when wall is hit
 
-            if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
+            if (this.x > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
             }
         } else if (walls.value === 'nowall') {
