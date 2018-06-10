@@ -140,15 +140,12 @@ function Circle(x, y, dx, dy, rad, color) {
 
             // Change x direction when wall is hit
 
-            if (this.x > window.innerWidth || this.x - this.rad < 0) {
+            if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
             }
         } else if (walls.value === 'nowall') {
 
             // Move to bottom if top if reached, to top if bottom is reached
-
-            this.dx = this.dy;
-            this.dy = this.dy;
 
             if (this.y < 0) {
                 this.y = window.innerHeight;
