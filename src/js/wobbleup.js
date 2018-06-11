@@ -97,7 +97,7 @@ function getRandomColor() {
   return color;
 }
 
-// Create Circle function
+// Create Circle constructor
 
 function Circle(x,y,dx,dy,rad,color) {
     this.x = x;
@@ -107,7 +107,7 @@ function Circle(x,y,dx,dy,rad,color) {
     this.rad = rad;
     this.color = color;
 
-    // Draw circle function
+    // Draw circle 
 
     this.draw = function() {
         ctx.beginPath();
@@ -168,7 +168,6 @@ function Circle(x,y,dx,dy,rad,color) {
         }
 
         
-
         this.draw();
 
     };
@@ -184,15 +183,17 @@ function init() {
     // Reset circles array
 
     circles = [];
-
+    
+     var numParticles = document.querySelector('#particles-number').value;
+     
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < numParticles; i++) {
         var rad = Math.abs(radInput.value) || randomIntFromRange(2,4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = (parseInt(hInput.value,10) * randomIntFromRange(0,hsfInput.value)) || randomIntFromRange(0.1, 3);
-        var dy = (parseInt(-vInput.value,10) * randomIntFromRange(0,vsfInput.value)) || -randomIntFromRange(0.1, 3);
+        var dx = (parseInt(hInput.value,10) * randomIntFromRange(0,hsfInput.value)) || randomIntFromRange(0.1, 5);
+        var dy = (parseInt(-vInput.value,10) * randomIntFromRange(0,vsfInput.value)) || -randomIntFromRange(0.1, 5);
         var color = colorInput.value || getRandomColor();
         circles.push(new Circle(x,y,dx,dy,rad,color));
     }
@@ -223,3 +224,6 @@ function animation() {
 
 animation();
 init();
+
+
+// Modify 
