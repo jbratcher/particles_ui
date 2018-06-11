@@ -2,6 +2,8 @@
 
 A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
 
+[Demo](https://jbratcher.github.io/particles_ui/#)
+
 ### Version
 
 0.0.4
