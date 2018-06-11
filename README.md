@@ -1,10 +1,10 @@
 # Particles UI
 
-A UI for the Canvas Particles Library [link]([I'm an inline-style link](https://www.google.com))
+A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
 
 ### Version
 
-0.0.3
+0.0.4
 
 ## Install Dependencies
 
@@ -78,7 +78,6 @@ gulp clean:dist
 
 ## Future Features:
 
-* expandable menu for large layout sizes
 * more options such as number of particles, random colors, etc.
 
 
@@ -87,6 +86,10 @@ gulp clean:dist
 * At 768x and above, canvas extends past viewport width on right side
 
 #### Change Log
+
+###### 0.0.3
+
+* Added expandable menu for control panel
 
 ###### 0.0.3
 
