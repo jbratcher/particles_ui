@@ -48,20 +48,13 @@ var canvas = document.querySelector("#main-canvas");
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
-// Set 2D context
-
-var ctx = canvas.getContext("2d");
-
-// Mouse coordiantes
-
-var mouse = {
-    x: undefined,
-    y: undefined
-};
-
 // Get button element
 
 var submitButton = document.querySelector('#submitChanges');
+
+// Set 2D context
+
+var ctx = canvas.getContext("2d");
 
 // Event Listeners
 
@@ -69,13 +62,6 @@ var submitButton = document.querySelector('#submitChanges');
 
 submitButton.addEventListener('click', function () {
     init();
-});
-
-// Capture Mouse movement
-
-window.addEventListener("mousemove", function (event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
 });
 
 // Responsive Canvas

@@ -6,7 +6,7 @@ A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js
 
 ### Version
 
-0.0.4
+0.1.1
 
 ## Install Dependencies
 
@@ -26,32 +26,6 @@ OR
 ```bash
 npm start
 ```
-
-## Folder and File Structure
-
-/src
-    /css
-    styles.css
-        /fonts
-        -fontawesome-webfont.eot
-        -fontawesome-webfont.svg
-        -fontawesome-webfont.ttf
-        -fontawesome-webfont.wotf
-        -fontawesome-webfont.wotf2
-        -FontAwesome.otf
-        /vendor
-        -font-awesome.min.css
-    /img
-    /js
-        -index.js
-        -main.js
-    /scss
-    -styles.scss
--index.html
--gulpfile.js
--LICENSE
--package.json
--readme.md
 
 ## Bundle and minify compiled CSS and JS
 
@@ -85,11 +59,15 @@ gulp clean:dist
 
 ## Known "bugs"
 
-* At 768x and above, canvas extends past viewport width on right side
+* At 768x and above, canvas extends past viewport width on right side on initial load, bug fixes itself on window resize.
 
 #### Change Log
 
-###### 0.0.3
+###### 0.1.1
+
+* Changed desktop main window height to fit inside browser window height
+
+###### 0.1.0
 
 * Added expandable menu for control panel
 

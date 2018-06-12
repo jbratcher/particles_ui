@@ -30,7 +30,7 @@ header {
   padding: 1rem;
   position: relative;
   z-index: 1; }
-  header h1 {
+  header #name {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     white-space: pre; }
@@ -126,7 +126,6 @@ main {
     width: 100%; }
 
 #main-canvas {
-  min-height: 100vh;
   height: 100%;
   min-width: 40vw;
   width: 100%; }
@@ -169,7 +168,7 @@ footer {
             padding-top: 1rem; }
           header #nav-mobile ul li:last-of-type {
             padding-bottom: 1rem; }
-    header #menu-toggle, header .toggle {
+    header #menu-toggle, header #nav-close {
       display: none; }
   main {
     box-shadow: none;
@@ -229,7 +228,8 @@ footer {
     main #main-canvas {
       box-shadow: inset 0 0 1rem black;
       width: 100%;
-      height: 100%; }
+      min-height: 85vh;
+      height: auto; }
   footer {
     padding: 3rem 0 1rem; }
     footer #menu-links ul {
