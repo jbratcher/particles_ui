@@ -16,7 +16,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
@@ -29,7 +29,7 @@ ul {
 
 header {
   background: #262626;
-  background: radial-gradient(ellipse at top center, #393939, #262626);
+  background: radial-gradient(ellipse at top left, #393939, #262626);
   box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,0.4);
   color: #eee;
   display: flex;
@@ -40,7 +40,7 @@ header {
   position: relative;
   z-index: 1;
 
-  h1 {
+ #name {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     white-space: pre;
@@ -61,6 +61,7 @@ header {
 
   #nav-mobile {
     background: inherit;
+    box-shadow: none;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -71,11 +72,12 @@ header {
     width: 100vw;
 
     &:target {
+      box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,0.4);
       transform: translateY(20rem);
     }
 
     ul {
-
+        
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -130,13 +132,18 @@ main {
 
 #controls {
   background: #335884;
-  background: radial-gradient(circle at center center, #335884 0%, #004293 100%);
+  background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
   box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,0.4);
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5rem 0;
+  
+  #panel-open, #panel-close {
+    display: none;  
+  }
+  
 }
 
 #controls-form {
@@ -160,14 +167,14 @@ main {
 
     &>select {
       background: #fefefe;
-      font-size: 0.5rem;
+      font-size: 0.75rem;
       padding: 1rem;
-      width: 40vw;
+      width: 100%;
     }
 
   }
 
-  &>button {
+  #submitChanges {
     background: #0934ff;
     border: none;
     border-radius: 1rem;
@@ -176,14 +183,19 @@ main {
     font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0;
+    width: 100%;
   }
+  
 
 }
 
 // Canvas section
 
 #main-canvas {
+  height: 100%;
+  min-width: 40vw;
   min-height: 80vh;
+  width: 100%;
 }
 
 // Footer section
@@ -212,15 +224,6 @@ footer {
         text-decoration: none;
       }
 
-    }
-
-  }
-
-  #to-top a {
-    color: #eee;
-
-    i.fa {
-      animation: 3s ease-in-out 0.5s infinite forwards alternate bounceup;
     }
 
   }
@@ -267,7 +270,7 @@ footer {
 
       }
 
-      #menu-toggle, .toggle {
+      #menu-toggle, #nav-close {
           display: none;
       }
 
@@ -282,12 +285,93 @@ footer {
 
     #controls {
       box-shadow: none;
+      display: block;
       padding: 5rem 2rem;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      width: 5vw;
+      
+      &:target {
+        
+        width: 100%;
+        
+        #panel-open {
+          display: none;
+        }
+      
+        #controls-form {
+          display: flex;
+          flex-direction: row;
+        }
+        
+      }
+      
+      #panel-open {
+        color: #eee;
+        display: block;  
+        position: absolute;
+        top: 0;
+        left: 1rem;
+      }
+      
+      #panel-close {
+        color: #eee;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 1rem;
+      }
+      
+    }
+    
+    #controls-form {
+      display: none;
+      
+      .form-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .input-box {
+          padding: 1rem 2rem;
+          
+          &>label {
+            font-size: 1rem;
+            white-space: nowrap;
+          }
+      
+          &>input, &>select, &>option {
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+            padding: 0.75rem 0;
+          }
+          
+          &>input {
+            width: 7.5vw;
+          }
+      
+          &>select {
+            background: #fefefe;
+            font-size: 0.75rem;
+            padding: 1rem;
+            width: 100%;
+          }
+    
+        }
+        
+      }
+      
+    }
+    
+    #submitChanges {
+      max-width: 80%;
     }
 
     #main-canvas {
-      box-shadow: inset 0 0 5rem rgba(0,0,0,1);
+      box-shadow: inset 0 0 1rem rgba(0,0,0,1);
       width: 100%;
+      min-height: 85vh;
+      height: auto;
     }
 
   }
@@ -309,27 +393,5 @@ footer {
     }
 
   }
-
-}
-
-// Animations
-
-@keyframes bounceup {
-
-    0% {
-        transform: translateY(-0.5rem);
-    }
-    25% {
-        transform: translateY(-1rem);
-    }
-    50% {
-        transform: translateY(-0.5rem);
-    }
-    75% {
-        transform: translateY(-1rem);
-    }
-    100% {
-        transform: translateY(-0.5rem);
-    }
 
 }

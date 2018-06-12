@@ -11,20 +11,20 @@
 
     </head>
 
-    <body id="#top">
+    <body>
 
         <header>
 
           <h1 class="name">Partico</h1>
 
-          <a href="#nav-mobile" id="menu-toggle" class="toggle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+          <a href="#nav-mobile" id="menu-toggle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 
           <nav id="nav-mobile">
               <ul>
-                  <li><a id="nav-close" class="toggle" href="#"><i class="fa fa-times fa-2x"></i></a></li>
-                  <li><a href="#services">New</a></li>
-                  <li><a href="#home">Save</a></li>
-                  <li><a href="#work">Get Snippet</a></li>
+                  <li><a id="nav-close" href="#"><i class="fa fa-times fa-2x"></i></a></li>
+                  <li><a href="#new">New</a></li>
+                  <li><a href="#save">Save</a></li>
+                  <li><a href="#snippet">Get Snippet</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#contact">Contact</a></li>
               </ul>
@@ -35,42 +35,96 @@
         <main>
 
           <section id="controls">
+            
+            <a href="#controls" id="panel-open"><i class="fa fa-angle-double-right fa-4x"></i></a>
 
             <form id="controls-form">
+              
+              <a id="panel-close" class="toggle" href="#"><i class="fa fa-angle-double-left fa-4x"></i></a>
+              
+              <section class="form-column">
+                
+                <section class="input-box">
+  
+                  <label for="particles-number">Number of Particles</label>
+                  <br />
+                  <input id="particles-number" type="text" name="numParticles" value="100">
+  
+                </section>
+                
+                <section class="input-box">
+  
+                  <label for="color">Color</label>
+                  <br />
+                  <input id="color" type="text" name="color">
+  
+                </section>
 
-              <section class="input-box">
-
-                <label for="color">Color</label>
-                <br />
-                <input id="color" type="text" name="color">
-
+                <section class="input-box">
+  
+                  <label for="radius">Radius</label>
+                  <br />
+                  <input id="radius" type="text" name="radius" value="4">
+  
+                </section>
+                  
               </section>
 
-              <section class="input-box">
+              <section class="form-column">
 
-                <label for="radius">Radius</label>
-                <br />
-                <input id="radius" type="text" name="radius">
 
+                <section class="input-box">
+  
+                  <label for="xspeed">Horizontal Speed</label>
+                  <br />
+                  <input id="xspeed" type="text" name="xspeed" value="">
+  
+                </section>
+                
+                <section class="input-box">
+  
+                  <label for="xfactor">Hor Speed Factor</label>
+                  <br />
+                  <input id="xfactor" type="text" name="xfactor" value="">
+  
+                </section>
+  
+                <section class="input-box">
+  
+                  <label for="yspeed">Vertical Speed</label>
+                  <br />
+                  <input id="yspeed" type="text" name="yspeed" value="">
+  
+                </section>
+                
+                <section class="input-box">
+  
+                  <label for="yfactor">Vert Speed Factor</label>
+                  <br />
+                  <input id="yfactor" type="text" name="yfactor" value="">
+  
+                </section>
+                
               </section>
+              
+              <section class="form-column">
+                
+                <section class="input-box">
 
-              <section class="input-box">
+                  <label for="walls">Wall Effect</label>
+                  <br />
+                  <select id="walls" type="text" name="walls" value="nowalls">
+  
+                    <option value="wall">Wall (Particles Bounce)</option>
+                    <option value="nowall">No Wall (Particles Pass Through)</option>
+  
+                  </select>
+  
+                </section>
 
-                <label for="xspeed">Horizontal Speed</label>
-                <br />
-                <input id="xspeed" type="text" name="xspeed">
-
+                <button id="submitChanges" type="button">Customize</button>
+                
               </section>
-
-              <section class="input-box">
-
-                <label for="yspeed">Vertical Speed</label>
-                <br />
-                <input id="yspeed" type="text" name="yspeed">
-
-              </section>
-
-              <button id="submitChanges" type="button">Customize</button>
 
             </form>
 
@@ -97,12 +151,6 @@
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-
-          </section>
-
-          <section id="to-top">
-
-            <a href="#top"><i class="fa fa-angle-up fa-3x"></i></a>
 
           </section>
 

@@ -9,6 +9,8 @@ console.log("js connected");
 
 // Declare variables
 
+// Get user inputs from controls form
+
 // Get color input
 
 var colorInput = document.querySelector('#color');
@@ -24,10 +26,21 @@ var selectedRad = radInput.value;
 var hInput = document.querySelector('#xspeed');
 var selectedHspeed = hInput.value;
 
+// Add speed factor (num range randomized for variable speed)
+var hsfInput = document.querySelector('#xfactor');
+var selectedHSF = hsfInput.value;
+
 // Get vertical speed input
 
 var vInput = document.querySelector('#yspeed');
 var selectedVSpeed = vInput.value;
+
+// Add speed factor (num range randomized for variable speed)
+var vsfInput = document.querySelector('#yfactor');
+var selectedVSF = vsfInput.value;
+
+var walls = document.querySelector('#walls');
+var selectedWall = walls.value;
 
 // Set up the canvas and size to container #canvas-display
 
@@ -35,20 +48,13 @@ var canvas = document.querySelector("#main-canvas");
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
-// Set 2D context
-
-var ctx = canvas.getContext("2d");
-
-// Mouse coordiantes
-
-var mouse = {
-    x: undefined,
-    y: undefined
-};
-
 // Get button element
 
 var submitButton = document.querySelector('#submitChanges');
+
+// Set 2D context
+
+var ctx = canvas.getContext("2d");
 
 // Event Listeners
 
@@ -56,13 +62,6 @@ var submitButton = document.querySelector('#submitChanges');
 
 submitButton.addEventListener('click', function () {
     init();
-});
-
-// Capture Mouse movement
-
-window.addEventListener("mousemove", function (event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
 });
 
 // Responsive Canvas
@@ -85,21 +84,17 @@ function getRandomColor() {
     return color;
 }
 
-// Create Circle function
+// Create Circle constructor
 
-function Circle(x, y, dx, dy, rad, color, boundaryRight, boundaryLeft) {
+function Circle(x, y, dx, dy, rad, color) {
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
     this.rad = rad;
     this.color = color;
-    this.boundaryRight = boundaryRight;
-    this.boundaryLeft = boundaryLeft;
-    var minRad = rad;
-    var maxRad = rad * 2;
 
-    // Draw circle function
+    // Draw circle 
 
     this.draw = function () {
         ctx.beginPath();
@@ -112,51 +107,50 @@ function Circle(x, y, dx, dy, rad, color, boundaryRight, boundaryLeft) {
 
     this.update = function () {
 
-        // Move circle to top once it reaches bottom
-
-        if (this.y + this.rad < 0) {
-            this.y = window.innerHeight;
-        } else if (this.y + this.rad > window.innerHeight) {
-            this.y = 0;
-        }
-
-        if (this.x + this.rad < 0) {
-            this.x = window.innerWidth;
-        } else if (this.x + this.rad > window.innerWidth) {
-            this.x = 0;
-        }
-
-        // // Change x direction if particle hits defined boundary
-        //
-        // if(this.x > boundaryRight || this.x < boundaryLeft) {
-        //     this.dx = -this.dx;
-        // }
-
         // Increment position (x,y)
 
         this.x += this.dx;
         this.y += this.dy;
 
-        // Interactivity (mouse and circles)
+        // Draw Circle
 
-        // Mouse detection for circle
+        // Get Wall value from input and set logic appropriately
 
-        if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50) {
+        if (walls.value === 'wall') {
 
-            // Limit circle grow size
+            // Change y direction when wall is hit
 
-            if (this.rad < maxRad) {
-                this.rad += 1;
+            if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {
+                this.dy = -this.dy;
             }
 
-            // Limit circle shrink size
-        } else if (this.rad > minRad) {
-            this.rad -= 1;
-        } else if (this.rad < this.minRad) {
-            this.rad += 1;
-        }
+            // Change x direction when wall is hit
 
-        // Draw Circle
+            if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
+                this.dx = -this.dx;
+            }
+        } else if (walls.value === 'nowall') {
+
+            // Move to bottom if top if reached, to top if bottom is reached
+
+            if (this.y < 0) {
+                this.y = window.innerHeight;
+            } else if (this.y > window.innerHeight) {
+                this.y = 0;
+            } else {
+                this.y = this.y;
+            }
+
+            // Move to start if end is reached and vice versa
+
+            if (this.x < 0) {
+                this.x = window.innerWidth;
+            } else if (this.x > window.innerWidth) {
+                this.x = 0;
+            } else {
+                this.x = this.x;
+            }
+        }
 
         this.draw();
     };
@@ -172,18 +166,18 @@ function init() {
 
     circles = [];
 
+    var numParticles = document.querySelector('#particles-number').value;
+
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < numParticles; i++) {
         var rad = Math.abs(radInput.value) || randomIntFromRange(2, 4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = hInput.value || randomIntFromRange(0.2, 0.3);
-        var dy = -vInput.value || -randomIntFromRange(0.2, 0.3);
+        var dx = parseInt(hInput.value, 10) * randomIntFromRange(0, hsfInput.value) || randomIntFromRange(0.1, 5);
+        var dy = parseInt(-vInput.value, 10) * randomIntFromRange(0, vsfInput.value) || -randomIntFromRange(0.1, 5);
         var color = colorInput.value || getRandomColor();
-        var boundaryRight = x + rad;
-        var boundaryLeft = x - rad;
-        circles.push(new Circle(x, y, dx, dy, rad, color, boundaryRight, boundaryLeft));
+        circles.push(new Circle(x, y, dx, dy, rad, color));
     }
 }
 
@@ -210,3 +204,5 @@ function animation() {
 
 animation();
 init();
+
+// Modify
