@@ -1,46 +1,6 @@
-'use strict';
+"use strict";
 
-// Drawing and animating circles with random velocity and color
-// Circles 'float' up to the top of the canvas and loop back to the bottom on repeat
-
-// Report JS file connected
-
-console.log("js connected");
-
-// Declare variables
-
-// Get user inputs from controls form
-
-// Get color input
-
-var colorInput = document.querySelector('#color');
-var selectedColor = colorInput.value;
-
-// Get radius input
-
-var radInput = document.querySelector('#radius');
-var selectedRad = radInput.value;
-
-// Get horizontal speed input
-
-var hInput = document.querySelector('#xspeed');
-var selectedHspeed = hInput.value;
-
-// Add speed factor (num range randomized for variable speed)
-var hsfInput = document.querySelector('#xfactor');
-var selectedHSF = hsfInput.value;
-
-// Get vertical speed input
-
-var vInput = document.querySelector('#yspeed');
-var selectedVSpeed = vInput.value;
-
-// Add speed factor (num range randomized for variable speed)
-var vsfInput = document.querySelector('#yfactor');
-var selectedVSF = vsfInput.value;
-
-var walls = document.querySelector('#walls');
-var selectedWall = walls.value;
+// Animating particles with randomized or user-selected attribute values
 
 // Set up the canvas and size to container #canvas-display
 
@@ -69,7 +29,6 @@ submitButton.addEventListener('click', function () {
 window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    init();
 });
 
 // Utility Functions
@@ -116,7 +75,9 @@ function Circle(x, y, dx, dy, rad, color) {
 
         // Get Wall value from input and set logic appropriately
 
-        if (walls.value === 'wall') {
+        var selectedWall = document.querySelector('#walls').value;
+
+        if (selectedWall === 'wall') {
 
             // Change y direction when wall is hit
 
@@ -129,7 +90,7 @@ function Circle(x, y, dx, dy, rad, color) {
             if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
             }
-        } else if (walls.value === 'nowall') {
+        } else if (selectedWall === 'nowall') {
 
             // Move to bottom if top if reached, to top if bottom is reached
 
@@ -166,17 +127,28 @@ function init() {
 
     circles = [];
 
+    // Variables
+
+    // Get user inputs from controls form
+
+
     var numParticles = document.querySelector('#particles-number').value;
+    var selectedRad = document.querySelector('#radius').value;
+    var selectedColor = document.querySelector('#color').value;
+    var selectedHSpeed = document.querySelector('#xspeed').value;
+    var selectedHSF = document.querySelector('#xfactor').value;
+    var selectedVSpeed = document.querySelector('#yspeed').value;
+    var selectedVSF = document.querySelector('#yfactor').value;
 
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
     for (var i = 0; i < numParticles; i++) {
-        var rad = Math.abs(radInput.value) || randomIntFromRange(2, 4);
+        var rad = Math.abs(selectedRad) || randomIntFromRange(2, 4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = parseInt(hInput.value, 10) * randomIntFromRange(0, hsfInput.value) || randomIntFromRange(0.1, 5);
-        var dy = parseInt(-vInput.value, 10) * randomIntFromRange(0, vsfInput.value) || -randomIntFromRange(0.1, 5);
-        var color = colorInput.value || getRandomColor();
+        var dx = parseInt(selectedHSpeed, 10) * randomIntFromRange(0, selectedHSF) || randomIntFromRange(0.1, 5);
+        var dy = parseInt(-selectedVSpeed, 10) * randomIntFromRange(0, selectedVSF) || -randomIntFromRange(0.1, 5);
+        var color = selectedColor || getRandomColor();
         circles.push(new Circle(x, y, dx, dy, rad, color));
     }
 }
