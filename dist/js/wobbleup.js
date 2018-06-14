@@ -8,17 +8,17 @@ var canvas = document.querySelector("#main-canvas");
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
-// Get button element
-
-var submitButton = document.querySelector('#submitChanges');
-
 // Set 2D context
 
 var ctx = canvas.getContext("2d");
 
+// Get button element
+
+var submitButton = document.querySelector('#submitChanges');
+
 // Event Listeners
 
-// Submit Changes when form button is clicked
+// Make changes to particle attribute values
 
 submitButton.addEventListener('click', function () {
     init();
@@ -71,8 +71,6 @@ function Circle(x, y, dx, dy, rad, color) {
         this.x += this.dx;
         this.y += this.dy;
 
-        // Draw Circle
-
         // Get Wall value from input and set logic appropriately
 
         var selectedWall = document.querySelector('#walls').value;
@@ -112,6 +110,8 @@ function Circle(x, y, dx, dy, rad, color) {
                 this.x = this.x;
             }
         }
+
+        // Draw Circle
 
         this.draw();
     };
