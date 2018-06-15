@@ -14,12 +14,20 @@ var ctx = canvas.getContext("2d");
 
 const submitButton = document.querySelector('#submitChanges');
 
+const resetButton = document.querySelector('#resetChanges');
+
 // Event Listeners
 
 // Make changes to particle attribute values
 
 submitButton.addEventListener('click', () => {
   init();
+});
+
+// Reset changes made to default values
+
+resetButton.addEventListener('click', () => {
+    reset();
 });
 
 // Responsive Canvas
@@ -129,12 +137,8 @@ function init() {
     // Reset circles array
 
     circles = [];
-    
-    // Variables
 
     // Get user inputs from controls form
-    
-    
     
     var numParticles = document.querySelector('#particles-number').value;
     var selectedRad = document.querySelector('#radius').value;
@@ -153,6 +157,26 @@ function init() {
         var dx = (parseInt(selectedHSpeed,10) * randomIntFromRange(0,selectedHSF)) || randomIntFromRange(0.1, 5);
         var dy = (parseInt(-selectedVSpeed,10) * randomIntFromRange(0,selectedVSF)) || -randomIntFromRange(0.1, 5);
         var color = selectedColor || getRandomColor();
+        circles.push(new Circle(x,y,dx,dy,rad,color));
+    }
+
+}
+
+function reset() {
+
+    // Reset circles array
+
+    circles = [];
+     
+    // Set defaults for circles
+
+    for (var i = 0; i < 100; i++) {
+        var rad = randomIntFromRange(2,4);
+        var x = Math.random() * (window.innerWidth - rad * 2);
+        var y = Math.random() * (window.innerHeight - rad * 2);
+        var dx = randomIntFromRange(0.1, 5);
+        var dy = -randomIntFromRange(0.1, 5);
+        var color = getRandomColor();
         circles.push(new Circle(x,y,dx,dy,rad,color));
     }
 
