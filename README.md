@@ -6,12 +6,12 @@ A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js
 
 ### Version
 
-0.1.1
+0.1.2
 
 ## Install Dependencies
 
 ```bash
-npm install 
+npm install
 ```
 
 ## Compile Sass & Run Dev Server
@@ -44,24 +44,29 @@ gulp build
 gulp clean:dist
 ```
 
-## Features: 
+## Features:
 
 * Uses Canvas Particle library to generate colored particles
 * Uses HTML5 canvas to display particles
 * Flexbox w/ media queries for responsiveness
 * JS animation frames to continually update animation
+* Generates JS snippet from user input for use in other projects
 
 
 ## Future Features:
 
-* more options such as number of particles, random colors, etc.
+* Clean up js files
 
 
 ## Known "bugs"
 
-* At 768x and above, canvas extends past viewport width on right side on initial load, bug fixes itself on window resize.
+* opening modals/menus refocuses browser window
 
 #### Change Log
+
+###### 0.1.2
+
+* Added expandable modal for generated snippet
 
 ###### 0.1.1
 
@@ -79,8 +84,7 @@ gulp clean:dist
 
 * Added more options for customization, styling for interface
 
- 
+
 ###### 0.0.1
 
 * Initial commit
-
