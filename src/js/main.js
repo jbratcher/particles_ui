@@ -1,5 +1,13 @@
+var numParticlesTemp = document.querySelector('#particles-number');
+var selectedRadTemp = document.querySelector('#radius');
+var selectedColorTemp = document.querySelector('#color');
+var selectedHSpeedTemp = document.querySelector('#xspeed');
+var selectedHSFTemp = document.querySelector('#xfactor');
+var selectedVSpeedTemp = document.querySelector('#yspeed');
+var selectedVSFTemp = document.querySelector('#yfactor');
 
 
+var template;
 
 
 const getSnippet = document.querySelector('#get-snippet');
@@ -7,14 +15,6 @@ const getSnippet = document.querySelector('#get-snippet');
 getSnippet.addEventListener('click', () => {
     
     // get user inputs via element.value
-    
-    var numParticlesTemp = document.querySelector('#particles-number').value;
-    var selectedRadTemp = document.querySelector('#radius').value;
-    var selectedColorTemp = document.querySelector('#color').value;
-    var selectedHSpeedTemp = document.querySelector('#xspeed').value;
-    var selectedHSFTemp = document.querySelector('#xfactor').value;
-    var selectedVSpeedTemp = document.querySelector('#yspeed').value;
-    var selectedVSFTemp = document.querySelector('#yfactor').value;
    
     
     // generate output snippet
@@ -110,13 +110,13 @@ getSnippet.addEventListener('click', () => {
                         
                             circles = [];
                              
-                            for (var i = 0; i < ${numParticlesTemp}; i++) {
-                                var rad = Math.abs(${selectedRadTemp}) || randomIntFromRange(2,4);
+                            for (var i = 0; i < ${numParticlesTemp.value}; i++) {
+                                var rad = Math.abs(${selectedRadTemp.value}) || randomIntFromRange(2,4);
                                 var x = Math.random() * (window.innerWidth - rad * 2);
                                 var y = Math.random() * (window.innerHeight - rad * 2);
-                                var dx = (parseInt(${selectedHSpeedTemp},10) * randomIntFromRange(0,${selectedHSFTemp})) || randomIntFromRange(0.1, 5);
-                                var dy = (parseInt(-${selectedVSpeedTemp},10) * randomIntFromRange(0,${selectedVSFTemp})) || -randomIntFromRange(0.1, 5);
-                                var color = ${selectedColorTemp} || getRandomColor();
+                                var dx = (parseInt(${selectedHSpeedTemp.value},10) * randomIntFromRange(0,${selectedHSFTemp.value})) || randomIntFromRange(0.1, 5);
+                                var dy = (parseInt(-${selectedVSpeedTemp.value},10) * randomIntFromRange(0,${selectedVSFTemp.value})) || -randomIntFromRange(0.1, 5);
+                                var color = ${selectedColorTemp.value} || getRandomColor();
                                 circles.push(new Circle(x,y,dx,dy,rad,color));
                             }
                         
@@ -137,12 +137,16 @@ getSnippet.addEventListener('click', () => {
                         animation();
                         init();
                     `;
+                    
+                    console.log(template);
+    
+    
     
     // open modal with snippet to copy/paste
     
         // select closed modal
         // add class to expand modal
-        // add template string to modal 
+        // add template string to modal
     
     
 });
