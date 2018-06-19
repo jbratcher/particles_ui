@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 html, body {
   background: #fefefe;
   color: #eee;
@@ -134,15 +137,15 @@ main {
     #controls-form .input-box > label {
       font-size: 1.5rem;
       white-space: nowrap; }
+    #controls-form .input-box > input {
+      text-align: center; }
     #controls-form .input-box > input, #controls-form .input-box > select, #controls-form .input-box > option {
       border-radius: 0.25rem;
       margin-top: 0.5rem;
-      padding: 0.75rem 0; }
+      padding: 1rem; }
     #controls-form .input-box > select {
       background: #fefefe;
-      font-size: 0.75rem;
-      padding: 1rem;
-      width: 100%; }
+      font-size: 0.75rem; }
   #controls-form #submitChanges, #controls-form #resetChanges {
     background: #0934ff;
     border: none;
@@ -247,7 +250,7 @@ footer {
           main #controls-form .form-column .input-box > input, main #controls-form .form-column .input-box > select, main #controls-form .form-column .input-box > option {
             border-radius: 0.25rem;
             margin-top: 0.5rem;
-            padding: 0.75rem 0; }
+            padding: 1rem; }
           main #controls-form .form-column .input-box > input {
             width: 7.5vw; }
           main #controls-form .form-column .input-box > select {

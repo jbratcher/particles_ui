@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html, body {
   background: #fefefe;
   color: #eee;
@@ -200,17 +204,19 @@ main {
       white-space: nowrap;
     }
 
+    &>input {
+      text-align: center;
+    }
+
     &>input, &>select, &>option {
       border-radius: 0.25rem;
       margin-top: 0.5rem;
-      padding: 0.75rem 0;
+      padding: 1rem;
     }
 
     &>select {
       background: #fefefe;
       font-size: 0.75rem;
-      padding: 1rem;
-      width: 100%;
     }
 
   }
@@ -388,7 +394,7 @@ footer {
           &>input, &>select, &>option {
             border-radius: 0.25rem;
             margin-top: 0.5rem;
-            padding: 0.75rem 0;
+            padding: 1rem;
           }
 
           &>input {
