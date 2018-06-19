@@ -25,107 +25,115 @@
           <nav id="nav-mobile">
               <ul>
                   <li><a id="nav-close" href="#"><i class="fa fa-times fa-2x"></i></a></li>
-                  <li id="get-snippet"><a href="#snippet">Get Snippet</a></li>
+                  <li id="get-snippet"><a href="#snippet-modal">Get Snippet</a></li>
                   <li><a href="#about">About</a></li>
               </ul>
           </nav>
 
         </header>
 
+        <section id="snippet-modal">
+
+          <a href="#"><i class="fa fa-times fa-2x"></i></a>
+          <label for="snippet">Copy this</label>
+          <textarea id="snippet" name="snippet" rows="10" cols="60"></textarea>
+
+        </section>
+
         <main>
 
           <section id="controls">
-            
+
             <a href="#controls" id="panel-open"><i class="fa fa-angle-double-right fa-4x"></i></a>
 
             <form id="controls-form">
-              
+
               <a id="panel-close" class="toggle" href="#"><i class="fa fa-angle-double-left fa-4x"></i></a>
-              
+
               <section class="form-column">
-                
+
                 <section class="input-box">
-  
+
                   <label for="particles-number">Number of Particles</label>
                   <br />
                   <input id="particles-number" type="text" name="numParticles" value="100">
-  
+
                 </section>
-                
+
                 <section class="input-box">
-  
+
                   <label for="color">Color</label>
                   <br />
                   <input id="color" type="text" name="color">
-  
+
                 </section>
 
                 <section class="input-box">
-  
+
                   <label for="radius">Radius</label>
                   <br />
                   <input id="radius" type="text" name="radius" value="4">
-  
+
                 </section>
-                  
+
               </section>
 
               <section class="form-column">
 
 
                 <section class="input-box">
-  
+
                   <label for="xspeed">Horizontal Speed</label>
                   <br />
                   <input id="xspeed" type="text" name="xspeed" value="3">
-  
+
                 </section>
-                
+
                 <section class="input-box">
-  
+
                   <label for="xfactor">Hor Speed Factor</label>
                   <br />
                   <input id="xfactor" type="text" name="xfactor" value="3">
-  
+
                 </section>
-  
+
                 <section class="input-box">
-  
+
                   <label for="yspeed">Vertical Speed</label>
                   <br />
                   <input id="yspeed" type="text" name="yspeed" value="3">
-  
+
                 </section>
-                
+
                 <section class="input-box">
-  
+
                   <label for="yfactor">Vert Speed Factor</label>
                   <br />
                   <input id="yfactor" type="text" name="yfactor" value="3">
-  
+
                 </section>
-                
+
               </section>
-              
+
               <section class="form-column">
-                
+
                 <section class="input-box">
 
                   <label for="walls">Wall Effect</label>
                   <br />
                   <select id="walls" type="text" name="walls" value="nowalls">
-  
+
                     <option value="wall">Wall (Particles Bounce)</option>
                     <option value="nowall">No Wall (Particles Pass Through)</option>
-  
+
                   </select>
-  
+
                 </section>
-                
+
                 <button id="resetChanges" type="button">Reset</button>
 
                 <button id="submitChanges" type="button">Customize</button>
-                
+
               </section>
 
             </form>
