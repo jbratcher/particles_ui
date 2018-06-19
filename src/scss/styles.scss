@@ -119,6 +119,8 @@ header {
 
 }
 
+// Snippet Modal
+
 #snippet-modal {
   background: #335884;
   background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
@@ -160,6 +162,48 @@ header {
     max-width: 90vw;
     opacity: 0;
     padding: 1rem;
+  }
+
+}
+
+// About section
+
+#about {
+  background: #335884;
+  background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+
+  a {
+    color: #eee;
+    opacity: 0;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+
+  h2, p {
+    opacity: 0;
+    padding: 1rem 0;
+  }
+
+  p {
+    width: 50vw;
+  }
+
+  &:target {
+    height: 20rem;
+    max-height: 100%;
+
+    a, h2, p {
+      opacity: 1;
+    }
+
   }
 
 }

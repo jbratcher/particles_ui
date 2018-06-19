@@ -110,6 +110,33 @@ header {
     opacity: 0;
     padding: 1rem; }
 
+#about {
+  background: #335884;
+  background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+  #about a {
+    color: #eee;
+    opacity: 0;
+    position: absolute;
+    top: 5%;
+    right: 5%; }
+  #about h2, #about p {
+    opacity: 0;
+    padding: 1rem 0; }
+  #about p {
+    width: 50vw; }
+  #about:target {
+    height: 20rem;
+    max-height: 100%; }
+    #about:target a, #about:target h2, #about:target p {
+      opacity: 1; }
+
 main {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   display: flex;
