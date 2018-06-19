@@ -114,16 +114,18 @@ main {
       font-size: 0.75rem;
       padding: 1rem;
       width: 100%; }
-  #controls-form #submitChanges {
+  #controls-form #submitChanges, #controls-form #resetChanges {
     background: #0934ff;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
-    color: #eee;
+    color: #fff;
     font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0;
     width: 100%; }
+  #controls-form #resetChanges {
+    background: #7f95ff; }
 
 #main-canvas {
   height: 100%;
@@ -224,7 +226,7 @@ footer {
             font-size: 0.75rem;
             padding: 1rem;
             width: 100%; }
-    main #submitChanges {
+    main #submitChanges, main #resetChanges {
       max-width: 80%; }
     main #main-canvas {
       box-shadow: inset 0 0 1rem black;

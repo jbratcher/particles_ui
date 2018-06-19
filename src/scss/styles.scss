@@ -174,16 +174,20 @@ main {
 
   }
 
-  #submitChanges {
+  #submitChanges, #resetChanges {
     background: #0934ff;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.4);
-    color: #eee;
+    color: #fff;
     font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0;
     width: 100%;
+  }
+  
+  #resetChanges {
+    background: #7f95ff;
   }
   
 
@@ -363,7 +367,7 @@ footer {
       
     }
     
-    #submitChanges {
+    #submitChanges, #resetChanges {
       max-width: 80%;
     }
 
