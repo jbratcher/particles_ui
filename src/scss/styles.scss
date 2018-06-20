@@ -100,6 +100,13 @@ header {
         }
 
       }
+      
+      #get-snippet {
+        background: #335884;
+        background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+        border-radius: 1rem;
+        font-size: 1.5rem;
+      }
 
     }
 
@@ -187,7 +194,7 @@ header {
     right: 5%;
   }
 
-  h2, p {
+  h2, h3, p {
     opacity: 0;
     padding: 1rem 0;
   }
@@ -200,7 +207,7 @@ header {
     height: 20rem;
     max-height: 100%;
 
-    a, h2, p {
+    a, h2, h3, p {
       opacity: 1;
     }
 
@@ -349,13 +356,15 @@ footer {
             justify-content: flex-end;
 
             li {
-                padding: 1rem 0.75rem;
+                padding: 1rem;
 
                 &:nth-of-type(2) {
+                  margin: 0 2rem;
                   padding-top: 1rem;
                 }
 
                 &:last-of-type {
+                  margin: 0 2rem 0 0;
                   padding-bottom: 1rem;
                 }
 

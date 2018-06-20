@@ -70,6 +70,11 @@ header {
           color: #eee;
           font-size: 1rem;
           text-decoration: none; }
+      header #nav-mobile ul #get-snippet {
+        background: #335884;
+        background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+        border-radius: 1rem;
+        font-size: 1.5rem; }
   header #nav-close {
     position: absolute;
     top: 1rem;
@@ -126,7 +131,7 @@ header {
     position: absolute;
     top: 5%;
     right: 5%; }
-  #about h2, #about p {
+  #about h2, #about h3, #about p {
     opacity: 0;
     padding: 1rem 0; }
   #about p {
@@ -134,7 +139,7 @@ header {
   #about:target {
     height: 20rem;
     max-height: 100%; }
-    #about:target a, #about:target h2, #about:target p {
+    #about:target a, #about:target h2, #about:target h3, #about:target p {
       opacity: 1; }
 
 main {
@@ -225,10 +230,12 @@ footer {
         flex-direction: row;
         justify-content: flex-end; }
         header #nav-mobile ul li {
-          padding: 1rem 0.75rem; }
+          padding: 1rem; }
           header #nav-mobile ul li:nth-of-type(2) {
+            margin: 0 2rem;
             padding-top: 1rem; }
           header #nav-mobile ul li:last-of-type {
+            margin: 0 2rem 0 0;
             padding-bottom: 1rem; }
     header #menu-toggle, header #nav-close {
       display: none; }
