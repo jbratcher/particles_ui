@@ -83,10 +83,10 @@ header {
       align-items: center;
 
       li {
-        padding: 1rem;
+        padding: 0.75rem;
 
         &:nth-of-type(2) {
-          padding-top: 2rem;
+          margin-top: 2rem;
         }
 
         &:last-of-type {
@@ -103,9 +103,20 @@ header {
       
       #get-snippet {
         background: #335884;
-        background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+        background: radial-gradient(circle at 50% 0%, #4374ae 0%, #004293 100%);
         border-radius: 1rem;
+        box-shadow: 0 0 0.5rem rgba(255,255,255,0.4);
         font-size: 1.5rem;
+        position: relative;
+        top: 0;
+        transition: 0.5s ease-in-out;
+        
+        &:hover {
+          background: radial-gradient(circle at 50% 100%, #4374ae 0%, #004293 100%);
+          box-shadow: none;
+          top: 0.125rem;
+        }
+        
       }
 
     }
@@ -308,22 +319,28 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 1rem;
 
   #menu-links ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
 
     li {
-
       padding: 0.5rem 0;
+      transition: 0.5s ease-in-out;
+      
 
       a {
         color: #eee;
         font-size: 1rem;
         text-decoration: none;
+        
+        &:hover {
+          color: #4374ae;
+        }
+      
       }
 
     }
@@ -343,6 +360,7 @@ footer {
     box-shadow: none;
     flex-direction: row;
     justify-content: space-around;
+    padding: 1.5rem;
 
       #nav-mobile {
 
@@ -414,7 +432,7 @@ footer {
         color: #eee;
         display: block;
         position: absolute;
-        top: 0;
+        top: 0.5rem;
         left: 1rem;
       }
 
@@ -422,7 +440,7 @@ footer {
         color: #eee;
         display: block;
         position: absolute;
-        top: 0;
+        top: 0.5rem;
         right: 1rem;
       }
 
@@ -481,8 +499,6 @@ footer {
   }
 
   footer {
-
-    padding: 3rem 0 1rem;
 
     #menu-links ul {
       flex-direction: row;
