@@ -75,6 +75,7 @@ header {
         background: radial-gradient(circle at 50% 0%, #4374ae 0%, #004293 100%);
         border-radius: 1rem;
         box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.4);
+        cursor: pointer;
         font-size: 1.5rem;
         position: relative;
         top: 0;
@@ -192,6 +193,7 @@ main {
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
     color: #fff;
+    cursor: pointer;
     font-size: 1.25rem;
     margin-top: 2rem;
     padding: 1rem 0;
@@ -251,6 +253,13 @@ footer {
             padding-bottom: 1rem; }
     header #menu-toggle, header #nav-close {
       display: none; }
+  #about h2 {
+    font-size: 2rem; }
+  #about h3 {
+    font-size: 1.5rem;
+    padding-top: 0; }
+  #about p {
+    font-size: 1.25rem; }
   main {
     box-shadow: none;
     flex-direction: row;
