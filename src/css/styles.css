@@ -61,6 +61,7 @@ header {
       flex-direction: column;
       align-items: center; }
       header #nav-mobile ul li {
+        margin: 1rem 0;
         padding: 0.75rem; }
         header #nav-mobile ul li:nth-of-type(2) {
           margin-top: 2rem; }
@@ -92,64 +93,60 @@ header {
       text-decoration: none;
       opacity: 0.5; }
 
-#snippet-modal {
+#snippet-modal, #about {
   background: #335884;
   background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 0;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  #snippet-modal:target {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  width: 100vw; }
+  #snippet-modal:target, #about:target {
     height: 20rem;
-    max-height: 100%; }
-    #snippet-modal:target a, #snippet-modal:target label, #snippet-modal:target textarea {
+    max-height: 100%;
+    opacity: 1;
+    top: 5rem; }
+    #snippet-modal:target a, #snippet-modal:target label, #snippet-modal:target textarea, #about:target a, #about:target label, #about:target textarea {
       opacity: 1; }
-  #snippet-modal a {
+  #snippet-modal a, #about a {
     color: #eee;
     opacity: 0;
     position: absolute;
     top: 5%;
     right: 5%; }
-  #snippet-modal label {
+  #snippet-modal label, #about label {
     font-size: 1.25rem;
     opacity: 0;
     padding: 1rem; }
-  #snippet-modal textarea {
+  #snippet-modal textarea, #about textarea {
     border-radius: 1rem;
     width: 50vw;
     max-width: 90vw;
     opacity: 0;
     padding: 1rem; }
 
-#about {
-  background: #335884;
-  background: radial-gradient(circle at 50% 0%, #335884 0%, #004293 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 0;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  #about a {
-    color: #eee;
-    opacity: 0;
-    position: absolute;
-    top: 5%;
-    right: 5%; }
-  #about h2, #about h3, #about p {
-    opacity: 0;
-    padding: 1rem 0; }
-  #about p {
-    width: 50vw; }
-  #about:target {
-    height: 20rem;
-    max-height: 100%; }
-    #about:target a, #about:target h2, #about:target h3, #about:target p {
-      opacity: 1; }
+#about a {
+  color: #eee;
+  opacity: 0;
+  position: absolute;
+  top: 5%;
+  right: 5%; }
+
+#about h2, #about h3, #about p {
+  opacity: 0;
+  padding: 1rem 0; }
+
+#about p {
+  width: 50vw; }
+
+#about:target a, #about:target h2, #about:target h3, #about:target p {
+  opacity: 1; }
 
 main {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
@@ -234,6 +231,7 @@ footer {
     box-shadow: none;
     flex-direction: row;
     justify-content: space-around;
+    height: 6.25rem;
     padding: 1.5rem; }
     header #nav-mobile {
       background: none;
@@ -253,6 +251,11 @@ footer {
             padding-bottom: 1rem; }
     header #menu-toggle, header #nav-close {
       display: none; }
+  #snippet-modal, #about {
+    z-index: -1; }
+    #snippet-modal:target, #about:target {
+      top: 6.25rem;
+      z-index: 2; }
   #about h2 {
     font-size: 2rem; }
   #about h3 {

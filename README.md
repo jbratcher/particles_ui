@@ -6,7 +6,7 @@ A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js
 
 ### Version
 
-0.1.2
+0.1.3
 
 ## Install Dependencies
 
@@ -63,6 +63,10 @@ gulp clean:dist
 * opening modals/menus refocuses browser window
 
 #### Change Log
+
+###### 0.1.3
+
+* Made menu open/close animations smoother
 
 ###### 0.1.2
 
