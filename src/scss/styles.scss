@@ -91,7 +91,7 @@ header {
         }
 
         &:last-of-type {
-          padding-bottom: 2rem;
+          margin-bottom: 2rem;
         }
 
         a {
@@ -106,7 +106,7 @@ header {
         background: #335884;
         background: radial-gradient(circle at 50% 0%, #4374ae 0%, #004293 100%);
         border-radius: 1rem;
-        box-shadow: 0 0 0.5rem rgba(255,255,255,0.4);
+        box-shadow: 0 0.125rem 0.5rem rgba(255,255,255,0.4);
         cursor: pointer;
         font-size: 1.5rem;
         position: relative;
@@ -115,6 +115,26 @@ header {
         
         &:hover {
           background: radial-gradient(circle at 50% 100%, #4374ae 0%, #004293 100%);
+          box-shadow: none;
+          top: 0.125rem;
+        }
+        
+      }
+      
+      #open-about {
+        background: #759cca;
+        background: radial-gradient(circle at 50% 0%, #759cca 0%, #4374ae 100%);
+        border-radius: 1rem;
+        box-shadow: 0 0.125rem 0.5rem rgba(255,255,255,0.4);
+        cursor: pointer;
+        font-size: 1.5rem;
+        position: relative;
+        padding: 0.75rem 2rem;
+        top: 0;
+        transition: 0.5s ease-in-out;
+        
+        &:hover {
+          background: radial-gradient(circle at 50% 100%, #759cca 0%, #4374ae 100%);
           box-shadow: none;
           top: 0.125rem;
         }
@@ -377,14 +397,16 @@ footer {
 
                 &:nth-of-type(2) {
                   margin: 0 2rem;
-                  padding-top: 1rem;
                 }
 
                 &:last-of-type {
                   margin: 0 2rem 0 0;
-                  padding-bottom: 1rem;
                 }
 
+            }
+            
+            #open-about {
+              padding: 1rem 2rem;
             }
 
         }
