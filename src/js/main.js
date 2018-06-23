@@ -93,7 +93,6 @@ getSnippet.addEventListener('click', () => {
 
     }
 
-
     function init() {
 
         circles = [];

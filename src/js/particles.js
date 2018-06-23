@@ -1,6 +1,6 @@
 // Animating particles with randomized or user-selected attribute values
 
-// Set up the canvas and size to container #canvas-display
+// Set up the canvas and size to container #main-canvas
 
 var canvas = document.querySelector("#main-canvas");
 canvas.width = canvas.clientWidth;

@@ -1,6 +1,8 @@
 # Particles UI
 
-A UI for the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
+A UI inpirired by the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
+
+Customize your own particle canvas and get the js snippet!
 
 [Demo](https://jbratcher.github.io/particles_ui/#)
 
@@ -60,13 +62,13 @@ gulp clean:dist
 
 ## Known "bugs"
 
-* opening modals/menus refocuses browser window
+* 'get snippet' button won't open modal unless changes are made to the input 
 
 #### Change Log
 
 ###### 0.1.3
 
-* Made menu open/close animations smoother
+* Made menu open/close animations smoother, no refocus when opened/closed
 
 ###### 0.1.2
 
