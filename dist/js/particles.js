@@ -61,7 +61,7 @@ function Circle(x, y, dx, dy, rad, color) {
     this.rad = rad;
     this.color = color;
 
-    // Draw circle 
+    // Draw circle
 
     this.draw = function () {
         ctx.beginPath();
