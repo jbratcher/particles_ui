@@ -7,6 +7,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 	      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Partico</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.min.css">
 
     </head>
@@ -15,7 +16,7 @@
 
         <header>
 
-          <h1 class="name">Partico</h1>
+          <h1 id="name">Partico</h1>
 
           <a href="#nav-mobile" id="menu-toggle"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 
@@ -62,7 +63,7 @@
 
                   <label for="particles-number">Number of Particles</label>
                   <br />
-                  <input id="particles-number" type="text" name="numParticles" value="100">
+                  <input id="particles-number" type="text" name="numParticles" value="50">
 
                 </section>
 
@@ -126,7 +127,7 @@
 
                   <label for="walls">Wall Effect</label>
                   <br />
-                  <select id="walls" type="text" name="walls" value="nowalls">
+                  <select id="walls" type="text" name="walls" value="walls">
 
                     <option value="wall">Wall (Particles Bounce)</option>
                     <option value="nowall">No Wall (Particles Pass Through)</option>

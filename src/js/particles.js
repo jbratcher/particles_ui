@@ -59,7 +59,7 @@ function Circle(x,y,dx,dy,rad,color) {
     this.rad = rad;
     this.color = color;
 
-    // Draw circle 
+    // Draw circle
 
     this.draw = function() {
         ctx.beginPath();
@@ -71,35 +71,35 @@ function Circle(x,y,dx,dy,rad,color) {
     // Update circle position for animation
 
     this.update = function() {
-        
+
         // Increment position (x,y)
 
         this.x += this.dx;
         this.y += this.dy;
 
         // Get Wall value from input and set logic appropriately
-        
+
         var selectedWall = document.querySelector('#walls').value;
 
-        
+
         if (selectedWall === 'wall') {
-            
+
             // Change y direction when wall is hit
-    
+
             if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {
                 this.dy = -this.dy;
             }
-            
+
             // Change x direction when wall is hit
-        
+
             if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
                 this.dx = -this.dx;
-            } 
-            
+            }
+
         } else if (selectedWall === 'nowall') {
-            
+
             // Move to bottom if top if reached, to top if bottom is reached
-            
+
             if(this.y < 0) {
                 this.y = window.innerHeight;
             } else if(this.y > window.innerHeight) {
@@ -107,9 +107,9 @@ function Circle(x,y,dx,dy,rad,color) {
             } else {
                 this.y = this.y;
             }
-            
+
             // Move to start if end is reached and vice versa
-        
+
             if(this.x < 0) {
                 this.x = window.innerWidth;
             } else if(this.x > window.innerWidth) {
@@ -117,9 +117,9 @@ function Circle(x,y,dx,dy,rad,color) {
             } else {
                 this.x = this.x;
             }
-            
+
         }
-        
+
         // Draw Circle
 
         this.draw();
@@ -139,7 +139,7 @@ function init() {
     circles = [];
 
     // Get user inputs from controls form
-    
+
     var numParticles = document.querySelector('#particles-number').value;
     var selectedRad = document.querySelector('#radius').value;
     var selectedColor = document.querySelector('#color').value;
@@ -147,7 +147,7 @@ function init() {
     var selectedHSF = document.querySelector('#xfactor').value;
     var selectedVSpeed = document.querySelector('#yspeed').value;
     var selectedVSF = document.querySelector('#yfactor').value;
-     
+
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
     for (var i = 0; i < numParticles; i++) {
@@ -167,7 +167,7 @@ function reset() {
     // Reset circles array
 
     circles = [];
-     
+
     // Set defaults for circles
 
     for (var i = 0; i < 100; i++) {

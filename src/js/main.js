@@ -13,13 +13,14 @@ const getSnippet = document.querySelector('#get-snippet');
 
 getSnippet.addEventListener('click', () => {
 
-    var template = `var canvas = document.querySelector("canvas");
+    var template =
+`    var canvas = document.querySelector("canvas");
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
     window.addEventListener("resize", function() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
 
     var ctx = canvas.getContext("2d");
@@ -27,7 +28,7 @@ getSnippet.addEventListener('click', () => {
     var circles = [];
 
     function randomIntFromRange(min, max) {
-        return Math.random() * (max - min + 1) + min;
+      return Math.random() * (max - min + 1) + min;
     }
 
     function getRandomColor() {
@@ -37,63 +38,63 @@ getSnippet.addEventListener('click', () => {
     }
 
     function Circle(x,y,dx,dy,rad,color) {
-        this.x = x;
-        this.y = y;
-        this.dx = dx;
-        this.dy = dy;
-        this.rad = rad;
-        this.color = color;
+      this.x = x;
+      this.y = y;
+      this.dx = dx;
+      this.dy = dy;
+      this.rad = rad;
+      this.color = color;
 
-        this.draw = function() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.rad, 0, Math.PI *2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
+      this.draw = function() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.rad, 0, Math.PI *2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      };
+
+      this.update = function() {
+        this.x += this.dx;
+        this.y += this.dy;
+
+        ${selectedWallTemp.value === 'wall'
+
+        ?
+
+        `if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {
+          this.dy = -this.dy;
+        }
+
+        if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
+          this.dx = -this.dx;
+        }`
+
+        :
+
+        `if(this.y < 0) {
+          this.y = window.innerHeight;
+        } else if(this.y > window.innerHeight) {
+          this.y = 0;
+        } else {
+          this.y = this.y;
+        }
+
+        if(this.x < 0) {
+          this.x = window.innerWidth;
+        } else if(this.x > window.innerWidth) {
+          this.x = 0;
+        } else {
+          this.x = this.x;
+        }`
+
+        }
+
+        this.draw();
+
         };
 
-        this.update = function() {
-            this.x += this.dx;
-            this.y += this.dy;
+      }
 
-            ${selectedWallTemp.value === 'wall'
-
-            ?
-
-                `if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {
-                    this.dy = -this.dy;
-                }
-
-                if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {
-                    this.dx = -this.dx;
-                }`
-
-            :
-
-                `if(this.y < 0) {
-                    this.y = window.innerHeight;
-                } else if(this.y > window.innerHeight) {
-                    this.y = 0;
-                } else {
-                    this.y = this.y;
-                }
-
-                if(this.x < 0) {
-                    this.x = window.innerWidth;
-                } else if(this.x > window.innerWidth) {
-                  this.x = 0;
-                } else {
-                    this.x = this.x;
-                }`
-
-              }
-
-            this.draw();
-
-        };
-
-    }
-
-    function init() {
+      function init() {
 
         circles = [];
 
@@ -107,9 +108,9 @@ getSnippet.addEventListener('click', () => {
             circles.push(new Circle(x,y,dx,dy,rad,color));
         }
 
-    }
+      }
 
-    function animation() {
+      function animation() {
 
         requestAnimationFrame(animation);
 
@@ -119,10 +120,10 @@ getSnippet.addEventListener('click', () => {
             circles[i].update();
         }
 
-    }
+      }
 
-    animation();
-    init();
+      animation();
+      init();
 `;
 
     // set modal textarea text value to template
