@@ -62,7 +62,7 @@ gulp clean:dist
 
 ## Known "bugs"
 
-* 'get snippet' button won't open modal unless changes are made to the input 
+* 'get snippet' button won't open modal unless changes are made to the input (sometimes)
 
 #### Change Log
 

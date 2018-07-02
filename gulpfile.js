@@ -17,8 +17,8 @@ const del           = require('del');
 // Move vendor files from node modules to src folders
 
 gulp.task('fonts', () =>
-  gulp.src('node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('src/fonts'))
+  gulp.src('node_modules/font-awesome/css/fonts/*')
+    .pipe(gulp.dest('src/css/fonts'))
 );
 
 gulp.task('fa', () =>
@@ -63,7 +63,7 @@ gulp.task('img', () =>
     .pipe(cache(imagemin({
           interlaced: true
         })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('dist/img'))
 );
 
 // Live Reload function
@@ -76,6 +76,7 @@ gulp.task('browserSync', gulp.parallel('sass', () => {
     gulp.watch("src/scss/*.scss", gulp.parallel('sass')),
     gulp.watch("*.html").on('change', browserSync.reload),
     gulp.watch("src/js/*.js").on('change', browserSync.reload);
+    gulp.watch("src/img/*").on('change', browserSync.reload);
 }));
 
 // Bundle JS,CSS and minify
@@ -94,16 +95,18 @@ gulp.task('useref', () =>
 // Move src files to dist
 
 gulp.task('build:dist', () =>
-    gulp.src(["src/**", "index.html"])
+    gulp.src([ "index.html", "src/**", "!src/{scss,scss/*}"])
         .pipe(gulp.dest("dist"))
 );
 
 gulp.task('clean:dist', () => del('dist'));
 
-gulp.task('clean:files', () => del(['dist/css/styles.css', 'dist/css/font-awesome.min.css', 'dist/js/main.js', 'dist/js/index.js']));
+// Remove unminified files
+
+gulp.task('clean:files', () => del(['dist/css/styles.css', 'dist/css/vendor/', 'dist/js/main.js', 'dist/js/index.js']));
 
 // Gulp default tasks
 
 gulp.task('default', gulp.parallel('sass', 'fonts', 'fa', 'img', 'browserSync'));
 
-gulp.task('build', gulp.series('clean:dist', 'build:dist', 'sass', 'fonts', 'fa', 'img', 'autoprefix', 'compilejs', 'useref', 'clean:files'));
+gulp.task('build', gulp.series('clean:dist', 'build:dist', 'sass', 'img', 'autoprefix', 'compilejs', 'useref', 'clean:files'));
