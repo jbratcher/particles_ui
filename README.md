@@ -6,9 +6,11 @@ Customize your own particle canvas and get the js snippet!
 
 [Demo](https://jbratcher.github.io/particles_ui/#)
 
+
 ### Version
 
 0.1.3
+
 
 ## Install Dependencies
 
@@ -16,7 +18,7 @@ Customize your own particle canvas and get the js snippet!
 npm install
 ```
 
-## Compile Sass & Run Dev Server
+## Compile Code and Start Live Server
 
 gulp
 
@@ -58,11 +60,12 @@ gulp clean:dist
 ## Future Features:
 
 * Clean up js files
-
+* 
 
 ## Known "bugs"
 
 * 'get snippet' button won't open modal unless changes are made to the input (sometimes)
+
 
 #### Change Log
 
