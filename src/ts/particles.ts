@@ -150,12 +150,12 @@ function init() {
 
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
-    for (var i = 0; i < numParticles.value; i++) {
-        var rad = Math.abs(selectedRad.value) || randomIntFromRange(2,4);
+    for (var i = 0; i < parseInt(numParticles.value); i++) {
+        var rad = Math.abs(parseInt(selectedRad.value)) || randomIntFromRange(2,4);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
         var dx = (parseInt(selectedHSpeed.value,10) * randomIntFromRange(0,selectedHSF.value)) || randomIntFromRange(0.1, 5);
-        var dy = (parseInt(-selectedVSpeed.value,10) * randomIntFromRange(0,selectedVSF.value)) || -randomIntFromRange(0.1, 5);
+        var dy = (parseInt(selectedVSpeed.value,10) * randomIntFromRange(0,selectedVSF.value)) || -randomIntFromRange(0.1, 5);
         var color = selectedColor.value || getRandomColor();
         circles.push(new Circle(x,y,dx,dy,rad,color));
     }
