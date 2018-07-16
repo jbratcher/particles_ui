@@ -35,6 +35,7 @@ resetButton.addEventListener('click', () => {
 window.addEventListener("resize", function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    init();
 });
 
 // Utility Functions

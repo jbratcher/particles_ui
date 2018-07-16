@@ -23,6 +23,7 @@ resetButton.addEventListener('click', function () {
 window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    init();
 });
 // Utility Functions
 function randomIntFromRange(min, max) {
