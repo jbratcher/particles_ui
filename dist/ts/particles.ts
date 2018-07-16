@@ -21,13 +21,13 @@ const resetButton = document.querySelector('#resetChanges');
 // Make changes to particle attribute values
 
 submitButton.addEventListener('click', () => {
-  init();
+  onChange();
 });
 
 // Reset changes made to default values
 
 resetButton.addEventListener('click', () => {
-    reset();
+    init();
 });
 
 // Responsive Canvas
@@ -133,7 +133,7 @@ function Circle(x,y,dx,dy,rad,color) {
 
 var circles = [];
 
-function init() {
+function onChange() {
 
     // Reset circles array
 
@@ -163,7 +163,7 @@ function init() {
 
 }
 
-function reset() {
+function init() {
 
     // Reset circles array
 

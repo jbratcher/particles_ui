@@ -11,11 +11,11 @@ var resetButton = document.querySelector('#resetChanges');
 // Event Listeners
 // Make changes to particle attribute values
 submitButton.addEventListener('click', function () {
-    init();
+    onChange();
 });
 // Reset changes made to default values
 resetButton.addEventListener('click', function () {
-    reset();
+    init();
 });
 // Responsive Canvas
 window.addEventListener("resize", function () {
@@ -92,7 +92,7 @@ function Circle(x, y, dx, dy, rad, color) {
 }
 // Create circles array
 var circles = [];
-function init() {
+function onChange() {
     // Reset circles array
     circles = [];
     // Get user inputs from controls form
@@ -114,7 +114,7 @@ function init() {
         circles.push(new Circle(x, y, dx, dy, rad, color));
     }
 }
-function reset() {
+function init() {
     // Reset circles array
     circles = [];
     // Set defaults for circles
