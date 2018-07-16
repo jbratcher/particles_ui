@@ -1,15 +1,15 @@
 # Particles UI
 
-A UI inpirired by the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
+A UI inspired by the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
 
-Customize your own particle canvas and get the js snippet!
+Customize your own particle canvas and get the js snippet for use in your own projects!
 
 [Demo](https://jbratcher.github.io/particles_ui/#)
 
 
 ### Version
 
-0.1.3
+0.1.4
 
 
 ## Install Dependencies
@@ -60,7 +60,6 @@ gulp clean:dist
 ## Future Features:
 
 * Clean up js files
-* 
 
 ## Known "bugs"
 
@@ -68,6 +67,10 @@ gulp clean:dist
 
 
 #### Change Log
+
+###### 0.1.4
+
+* Refactored js to Typescript
 
 ###### 0.1.3
 
