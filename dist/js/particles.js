@@ -115,8 +115,8 @@ function init() {
     // Reset circles array
     circles = [];
     // Set defaults for circles
-    for (var i = 0; i < 100; i++) {
-        var rad = randomIntFromRange(2, 4);
+    for (var i = 0; i < randomIntFromRange(20, 100); i++) {
+        var rad = randomIntFromRange(1, 5);
         var x = Math.random() * (window.innerWidth - rad * 2);
         var y = Math.random() * (window.innerHeight - rad * 2);
         var dx = randomIntFromRange(0.1, 5);
