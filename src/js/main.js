@@ -1,3 +1,4 @@
+// Get values from user input
 var numParticlesTemp = document.querySelector('#particles-number');
 var selectedRadTemp = document.querySelector('#radius');
 var selectedColorTemp = document.querySelector('#color');
@@ -6,10 +7,12 @@ var selectedHSFTemp = document.querySelector('#xfactor');
 var selectedVSpeedTemp = document.querySelector('#yspeed');
 var selectedVSFTemp = document.querySelector('#yfactor');
 var selectedWallTemp = document.querySelector('#walls');
+// Declare template var as global
 var template;
 var getSnippet = document.querySelector('#get-snippet');
+// Generate template on click from user input values
 getSnippet.addEventListener('click', function () {
-    var template = "    var canvas = document.querySelector(\"canvas\");\n    canvas.width = canvas.clientWidth;\n    canvas.height = canvas.clientHeight;\n\n    window.addEventListener(\"resize\", function() {\n      canvas.width = window.innerWidth;\n      canvas.height = window.innerHeight;\n    });\n\n    var ctx = canvas.getContext(\"2d\");\n\n    var circles = [];\n\n    function randomIntFromRange(min, max) {\n      return Math.random() * (max - min + 1) + min;\n    }\n\n    function getRandomColor() {\n      let color = '#';\n      color += ((1<<24)*Math.random()|0).toString(16);\n      return color;\n    }\n\n    function Circle(x,y,dx,dy,rad,color) {\n      this.x = x;\n      this.y = y;\n      this.dx = dx;\n      this.dy = dy;\n      this.rad = rad;\n      this.color = color;\n\n      this.draw = function() {\n        ctx.beginPath();\n        ctx.arc(this.x, this.y, this.rad, 0, Math.PI *2);\n        ctx.fillStyle = this.color;\n        ctx.fill();\n      };\n\n      this.update = function() {\n        this.x += this.dx;\n        this.y += this.dy;\n\n        " + (selectedWallTemp.value === 'wall'
+    var template = "    var canvas = document.querySelector(\"canvas\");\n    canvas.width = canvas.clientWidth;\n    canvas.height = canvas.clientHeight;\n\n    window.addEventListener(\"resize\", function() {\n      canvas.width = window.innerWidth;\n      canvas.height = window.innerHeight;\n    });\n\n    var ctx = canvas.getContext(\"2d\");\n\n    var circles = [];\n\n    function randomIntFromRange(min, max) {\n      return Math.random() * (max - min + 1) + min;\n    }\n\n    function getRandomColor() {\n      let color = '#';\n      color += ((1<<24)*Math.random()|0).toString(16);\n      return color;\n    }\n\n    function Circle(x,y,dx,dy,rad,color) {\n      this.x = x;\n      this.y = y;\n      this.dx = dx;\n      this.dy = dy;\n      this.rad = rad;\n      this.color = color;\n\n      this.draw = function() {\n        ctx.beginPath();\n        ctx.arc(this.x, this.y, this.rad, 0, Math.PI *2);\n        ctx.fillStyle = this.color;\n        ctx.fill();\n      };\n\n      this.update = function() {\n        this.x += this.dx;\n        this.y += this.dy;\n\n        " + "" + "\n\n        " + (selectedWallTemp.value === 'wall'
         ?
             "if (this.y + this.rad > window.innerHeight || this.y + this.rad < 0) {\n          this.dy = -this.dy;\n        }\n\n        if (this.x + this.rad > window.innerWidth || this.x - this.rad < 0) {\n          this.dx = -this.dx;\n        }"
         :

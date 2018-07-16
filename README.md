@@ -50,11 +50,12 @@ gulp clean:dist
 
 ## Features:
 
-* Uses Canvas Particle library to generate colored particles
+* Uses Canvas Particle library to generate colored particles as base/default canvas
 * Uses HTML5 canvas to display particles
 * Flexbox w/ media queries for responsiveness
 * JS animation frames to continually update animation
 * Generates JS snippet from user input for use in other projects
+* Developed with Typescript, Sass, and Gulp
 
 
 ## Future Features:

@@ -1,3 +1,5 @@
+// Get values from user input
+
 var numParticlesTemp = <HTMLInputElement>document.querySelector('#particles-number');
 var selectedRadTemp = <HTMLInputElement>document.querySelector('#radius');
 var selectedColorTemp = <HTMLInputElement>document.querySelector('#color');
@@ -7,9 +9,13 @@ var selectedVSpeedTemp = <HTMLInputElement>document.querySelector('#yspeed');
 var selectedVSFTemp = <HTMLInputElement>document.querySelector('#yfactor');
 var selectedWallTemp = <HTMLInputElement>document.querySelector('#walls');
 
+// Declare template var as global
+
 var template;
 
 const getSnippet = <HTMLInputElement>document.querySelector('#get-snippet');
+
+// Generate template on click from user input values
 
 getSnippet.addEventListener('click', () => {
 
@@ -55,6 +61,8 @@ getSnippet.addEventListener('click', () => {
       this.update = function() {
         this.x += this.dx;
         this.y += this.dy;
+
+        ${ /* generate "wall or no wall" based on user input with ternary operator */ ``}
 
         ${selectedWallTemp.value === 'wall'
 

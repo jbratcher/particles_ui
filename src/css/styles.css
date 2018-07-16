@@ -190,7 +190,7 @@ main {
     #controls-form .input-box > input {
       text-align: center; }
     #controls-form .input-box > input, #controls-form .input-box > select, #controls-form .input-box > option {
-      border-radius: 0.25rem;
+      border-radius: 1rem;
       margin-top: 0.5rem;
       padding: 1rem; }
     #controls-form .input-box > select {

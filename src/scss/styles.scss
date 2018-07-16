@@ -1,5 +1,7 @@
 // Main Sass File
 
+// Base styling and resets
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,6 +56,8 @@ header {
     }
 
   }
+
+  // Mobile navigatin black magic
 
   #nav-mobile {
     background: inherit;
@@ -155,7 +159,7 @@ header {
 
 }
 
-// Snippet Modal
+// Snippet and About modal
 
 #snippet-modal, #about {
   background: #335884;
@@ -284,7 +288,7 @@ main {
     }
 
     &>input, &>select, &>option {
-      border-radius: 0.25rem;
+      border-radius: 1rem;
       margin-top: 0.5rem;
       padding: 1rem;
     }
@@ -343,7 +347,6 @@ footer {
     li {
       padding: 0.5rem 0;
       transition: 0.5s ease-in-out;
-
 
       a {
         color: #eee;
@@ -411,11 +414,11 @@ footer {
 
       }
 
-      }
+    }
 
-      #menu-toggle, #nav-close {
-          display: none;
-      }
+    #menu-toggle, #nav-close {
+        display: none;
+    }
 
   }
 
@@ -447,7 +450,6 @@ footer {
   }
 
   main {
-
     box-shadow: none;
     flex-direction: row;
     position: relative;
