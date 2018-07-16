@@ -2,13 +2,13 @@
 
 // Set up the canvas and size to container #main-canvas
 
-var canvas = <HTMLCanvasElement>document.querySelector("#main-canvas");
+const canvas = <HTMLCanvasElement>document.querySelector("#main-canvas");
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
 // Set 2D context
 
-var ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
 // Get button element
 
@@ -80,7 +80,7 @@ function Circle(x,y,dx,dy,rad,color) {
 
         // Get Wall value from input and set logic appropriately
 
-        var selectedWall = <HTMLInputElement>document.querySelector('#walls');
+        const selectedWall = <HTMLInputElement>document.querySelector('#walls');
 
 
         if (selectedWall.value === 'wall') {
@@ -131,7 +131,7 @@ function Circle(x,y,dx,dy,rad,color) {
 
 // Create circles array
 
-var circles = [];
+let circles = [];
 
 function onChange() {
 
@@ -141,23 +141,23 @@ function onChange() {
 
     // Get user inputs from controls form
 
-    var numParticles = <HTMLInputElement>document.querySelector('#particles-number');
-    var selectedRad = <HTMLInputElement>document.querySelector('#radius');
-    var selectedColor = <HTMLInputElement>document.querySelector('#color');
-    var selectedHSpeed = <HTMLInputElement>document.querySelector('#xspeed');
-    var selectedHSF = <HTMLInputElement>document.querySelector('#xfactor');
-    var selectedVSpeed = <HTMLInputElement>document.querySelector('#yspeed');
-    var selectedVSF = <HTMLInputElement>document.querySelector('#yfactor');
+    const numParticles = <HTMLInputElement>document.querySelector('#particles-number');
+    const selectedRad = <HTMLInputElement>document.querySelector('#radius');
+    const selectedColor = <HTMLInputElement>document.querySelector('#color');
+    const selectedHSpeed = <HTMLInputElement>document.querySelector('#xspeed');
+    const selectedHSF = <HTMLInputElement>document.querySelector('#xfactor');
+    const selectedVSpeed = <HTMLInputElement>document.querySelector('#yspeed');
+    const selectedVSF = <HTMLInputElement>document.querySelector('#yfactor');
 
     // Randomize circle value (position, velocity, fill and stroke color, and opacity)
 
-    for (var i = 0; i < parseInt(numParticles.value); i++) {
-        var rad = Math.abs(parseInt(selectedRad.value)) || randomIntFromRange(2,4);
-        var x = Math.random() * (window.innerWidth - rad * 2);
-        var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = (parseInt(selectedHSpeed.value,10) * randomIntFromRange(0,selectedHSF.value)) || randomIntFromRange(0.1, 5);
-        var dy = -(parseInt(selectedVSpeed.value,10) * randomIntFromRange(0,selectedVSF.value)) || -randomIntFromRange(0.1, 5);
-        var color = selectedColor.value || getRandomColor();
+    for (let i = 0; i < parseInt(numParticles.value); i++) {
+        const rad = Math.abs(parseInt(selectedRad.value)) || randomIntFromRange(2,4);
+        const x = Math.random() * (window.innerWidth - rad * 2);
+        const y = Math.random() * (window.innerHeight - rad * 2);
+        const dx = (parseInt(selectedHSpeed.value,10) * randomIntFromRange(0,selectedHSF.value)) || randomIntFromRange(0.1, 5);
+        const dy = -(parseInt(selectedVSpeed.value,10) * randomIntFromRange(0,selectedVSF.value)) || -randomIntFromRange(0.1, 5);
+        const color = selectedColor.value || getRandomColor();
         circles.push(new Circle(x,y,dx,dy,rad,color));
     }
 
@@ -171,13 +171,13 @@ function init() {
 
     // Set defaults for circles
 
-    for (var i = 0; i < randomIntFromRange(20, 100); i++) {
-        var rad = randomIntFromRange(1,5);
-        var x = Math.random() * (window.innerWidth - rad * 2);
-        var y = Math.random() * (window.innerHeight - rad * 2);
-        var dx = randomIntFromRange(0.1, 5);
-        var dy = -randomIntFromRange(0.1, 5);
-        var color = getRandomColor();
+    for (let i = 0; i < randomIntFromRange(20, 100); i++) {
+        const rad = randomIntFromRange(1,5);
+        const x = Math.random() * (window.innerWidth - rad * 2);
+        const y = Math.random() * (window.innerHeight - rad * 2);
+        const dx = randomIntFromRange(0.1, 5);
+        const dy = -randomIntFromRange(0.1, 5);
+        const color = getRandomColor();
         circles.push(new Circle(x,y,dx,dy,rad,color));
     }
 
