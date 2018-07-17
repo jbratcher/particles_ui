@@ -108,7 +108,7 @@ gulp.task('useref', () =>
 // Move src files to dist
 
 gulp.task('build:dist', () =>
-    gulp.src([ "index.html", "src/**", "!src/{scss,scss/*}"])
+    gulp.src([ "index.html", "src/**", "!src/{scss,scss/*}", "!src/{ts,ts/*}"])
         .pipe(gulp.dest("dist"))
 );
 
@@ -116,7 +116,7 @@ gulp.task('clean:dist', () => del('dist'));
 
 // Remove unminified files
 
-gulp.task('clean:files', () => del(['dist/css/styles.css', 'dist/css/vendor/', 'dist/js/main.js', 'dist/js/index.js']));
+gulp.task('clean:files', () => del(['dist/css/styles.css', 'dist/css/vendor/', 'dist/js/*', "!dist/js/main.min.js"]));
 
 // Gulp default tasks
 
