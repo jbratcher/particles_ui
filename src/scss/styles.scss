@@ -181,6 +181,7 @@ header {
     max-height: 100%;
     opacity: 1;
     top: 5rem;
+    z-index: 1;
 
     a, label, textarea {
       opacity: 1;
@@ -268,7 +269,6 @@ main {
   transition: all 0.5s ease-in-out;
   
   &:target {
-    padding: 5rem 0;
     height: 100%;
     
     #controls-form {
@@ -282,10 +282,7 @@ main {
     
     #panel-close-mobile {
       color: #eee;
-      display: block;
-      position: absolute;
-      top: 64%;
-      right: 10%;
+      align-self: center;
     }
     
   }

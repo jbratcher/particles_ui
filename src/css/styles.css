@@ -123,7 +123,8 @@ header {
     height: 20rem;
     max-height: 100%;
     opacity: 1;
-    top: 5rem; }
+    top: 5rem;
+    z-index: 1; }
     #snippet-modal:target a, #snippet-modal:target label, #snippet-modal:target textarea, #about:target a, #about:target label, #about:target textarea {
       opacity: 1; }
   #snippet-modal a, #about a {
@@ -179,7 +180,6 @@ main {
   height: 15vh;
   transition: all 0.5s ease-in-out; }
   #controls:target {
-    padding: 5rem 0;
     height: 100%; }
     #controls:target #controls-form {
       display: flex;
@@ -188,10 +188,7 @@ main {
       display: none; }
     #controls:target #panel-close-mobile {
       color: #eee;
-      display: block;
-      position: absolute;
-      top: 64%;
-      right: 10%; }
+      align-self: center; }
   #controls #panel-open-mobile {
     color: #eee; }
   #controls #panel-open, #controls #panel-close {
