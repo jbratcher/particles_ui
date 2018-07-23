@@ -164,6 +164,7 @@ main {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100vw; }
 
 #controls {
@@ -174,13 +175,30 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 0; }
+  padding: 1rem 0;
+  height: 15vh;
+  transition: all 0.5s ease-in-out; }
+  #controls:target {
+    padding: 5rem 0;
+    height: 100%; }
+    #controls:target #controls-form {
+      display: flex;
+      flex-direction: column; }
+    #controls:target #panel-open-mobile {
+      display: none; }
+    #controls:target #panel-close-mobile {
+      color: #eee;
+      display: block;
+      position: absolute;
+      top: 64%;
+      right: 10%; }
+  #controls #panel-open-mobile {
+    color: #eee; }
   #controls #panel-open, #controls #panel-close {
     display: none; }
 
 #controls-form {
-  display: flex;
-  flex-direction: column; }
+  display: none; }
   #controls-form .input-box {
     padding: 0.5rem 0;
     text-align: center; }
@@ -288,14 +306,20 @@ footer {
       padding: 5rem 2rem;
       position: relative;
       transition: all 0.5s ease-in-out;
-      width: 5vw; }
+      width: 5vw;
+      height: inherit; }
       main #controls:target {
-        width: 100%; }
+        width: 100%;
+        height: inherit; }
         main #controls:target #panel-open {
           display: none; }
         main #controls:target #controls-form {
           display: flex;
           flex-direction: row; }
+        main #controls:target #panel-close-mobile {
+          display: none; }
+      main #controls #panel-open-mobile, main #controls #panel-close-mobile {
+        display: none; }
       main #controls #panel-open {
         color: #eee;
         display: block;

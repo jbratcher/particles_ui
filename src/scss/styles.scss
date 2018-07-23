@@ -249,6 +249,7 @@ main {
   box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100vw;
 }
 
@@ -262,7 +263,36 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 0;
+  padding: 1rem 0;
+  height: 15vh;
+  transition: all 0.5s ease-in-out;
+  
+  &:target {
+    padding: 5rem 0;
+    height: 100%;
+    
+    #controls-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #panel-open-mobile {
+      display: none;
+    }
+    
+    #panel-close-mobile {
+      color: #eee;
+      display: block;
+      position: absolute;
+      top: 64%;
+      right: 10%;
+    }
+    
+  }
+  
+  #panel-open-mobile {
+    color: #eee;
+  }
 
   #panel-open, #panel-close {
     display: none;
@@ -271,8 +301,7 @@ main {
 }
 
 #controls-form {
-  display: flex;
-  flex-direction: column;
+  display: none;
 
   .input-box {
     padding: 0.5rem 0;
@@ -461,10 +490,12 @@ footer {
       position: relative;
       transition: all 0.5s ease-in-out;
       width: 5vw;
+      height: inherit;
 
       &:target {
 
         width: 100%;
+        height: inherit;
 
         #panel-open {
           display: none;
@@ -474,7 +505,15 @@ footer {
           display: flex;
           flex-direction: row;
         }
+        
+        #panel-close-mobile {
+          display: none;
+        }
 
+      }
+      
+      #panel-open-mobile, #panel-close-mobile {
+        display: none;
       }
 
       #panel-open {
