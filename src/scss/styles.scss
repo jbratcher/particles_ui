@@ -329,17 +329,17 @@ main {
     }
 
     #panel-close-mobile {
-      color: #eee;
-      align-self: center;
+      display: block;
     }
 
   }
 
-  #panel-open-mobile {
+  #panel-open-mobile, #panel-close-mobile {
+    align-self: center;
     color: #eee;
   }
 
-  #panel-open, #panel-close {
+  #panel-open, #panel-close, #panel-close-mobile {
     display: none;
   }
 
@@ -532,8 +532,8 @@ footer {
 
       &:target {
 
-        width: 100%;
         height: inherit;
+        width: 100%;
 
         #panel-open {
           display: none;

@@ -217,11 +217,11 @@ main {
     #controls:target #panel-open-mobile {
       display: none; }
     #controls:target #panel-close-mobile {
-      color: #eee;
-      align-self: center; }
-  #controls #panel-open-mobile {
+      display: block; }
+  #controls #panel-open-mobile, #controls #panel-close-mobile {
+    align-self: center;
     color: #eee; }
-  #controls #panel-open, #controls #panel-close {
+  #controls #panel-open, #controls #panel-close, #controls #panel-close-mobile {
     display: none; }
 
 #main-canvas {
@@ -327,8 +327,8 @@ footer {
               padding: 1rem;
               width: 100%; }
       main #controls:target {
-        width: 100%;
-        height: inherit; }
+        height: inherit;
+        width: 100%; }
         main #controls:target #panel-open {
           display: none; }
         main #controls:target #controls-form {
