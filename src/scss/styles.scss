@@ -265,28 +265,76 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
-  height: 15vh;
+  height: 20%;
   transition: all 0.5s ease-in-out;
-  
+
+  #controls-form {
+    display: none;
+
+    .input-box {
+      padding: 0.5rem 0;
+      text-align: center;
+
+      &>label {
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+
+      &>input {
+        text-align: center;
+      }
+
+      &>input, &>select, &>option {
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+        padding: 1rem;
+      }
+
+      &>select {
+        background: #fefefe;
+        font-size: 0.75rem;
+      }
+
+    }
+
+    #submitChanges, #resetChanges {
+      background: #0934ff;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0,0,0,0.4);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      width: 100%;
+    }
+
+    #resetChanges {
+      background: #7f95ff;
+    }
+
+  }
+
   &:target {
     height: 100%;
-    
+
     #controls-form {
       display: flex;
       flex-direction: column;
     }
-    
+
     #panel-open-mobile {
       display: none;
     }
-    
+
     #panel-close-mobile {
       color: #eee;
       align-self: center;
     }
-    
+
   }
-  
+
   #panel-open-mobile {
     color: #eee;
   }
@@ -297,53 +345,7 @@ main {
 
 }
 
-#controls-form {
-  display: none;
 
-  .input-box {
-    padding: 0.5rem 0;
-    text-align: center;
-
-    &>label {
-      font-size: 1.5rem;
-      white-space: nowrap;
-    }
-
-    &>input {
-      text-align: center;
-    }
-
-    &>input, &>select, &>option {
-      border-radius: 1rem;
-      margin-top: 0.5rem;
-      padding: 1rem;
-    }
-
-    &>select {
-      background: #fefefe;
-      font-size: 0.75rem;
-    }
-
-  }
-
-  #submitChanges, #resetChanges {
-    background: #0934ff;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.4);
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    padding: 1rem 0;
-    width: 100%;
-  }
-
-  #resetChanges {
-    background: #7f95ff;
-  }
-
-}
 
 // Canvas section
 
@@ -489,6 +491,45 @@ footer {
       width: 5vw;
       height: inherit;
 
+      #controls-form {
+        display: none;
+
+        .form-column {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .input-box {
+            padding: 1rem 2rem;
+
+            &>label {
+              font-size: 1rem;
+              white-space: nowrap;
+            }
+
+            &>input, &>select, &>option {
+              border-radius: 0.25rem;
+              margin-top: 0.5rem;
+              padding: 1rem;
+            }
+
+            &>input {
+              width: 7.5vw;
+            }
+
+            &>select {
+              background: #fefefe;
+              font-size: 0.75rem;
+              padding: 1rem;
+              width: 100%;
+            }
+
+          }
+
+        }
+
+      }
+
       &:target {
 
         width: 100%;
@@ -502,13 +543,13 @@ footer {
           display: flex;
           flex-direction: row;
         }
-        
+
         #panel-close-mobile {
           display: none;
         }
 
       }
-      
+
       #panel-open-mobile, #panel-close-mobile {
         display: none;
       }
@@ -527,45 +568,6 @@ footer {
         position: absolute;
         top: 0.5rem;
         right: 1rem;
-      }
-
-    }
-
-    #controls-form {
-      display: none;
-
-      .form-column {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .input-box {
-          padding: 1rem 2rem;
-
-          &>label {
-            font-size: 1rem;
-            white-space: nowrap;
-          }
-
-          &>input, &>select, &>option {
-            border-radius: 0.25rem;
-            margin-top: 0.5rem;
-            padding: 1rem;
-          }
-
-          &>input {
-            width: 7.5vw;
-          }
-
-          &>select {
-            background: #fefefe;
-            font-size: 0.75rem;
-            padding: 1rem;
-            width: 100%;
-          }
-
-        }
-
       }
 
     }

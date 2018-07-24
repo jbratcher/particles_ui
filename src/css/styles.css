@@ -177,8 +177,38 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
-  height: 15vh;
+  height: 20%;
   transition: all 0.5s ease-in-out; }
+  #controls #controls-form {
+    display: none; }
+    #controls #controls-form .input-box {
+      padding: 0.5rem 0;
+      text-align: center; }
+      #controls #controls-form .input-box > label {
+        font-size: 1.5rem;
+        white-space: nowrap; }
+      #controls #controls-form .input-box > input {
+        text-align: center; }
+      #controls #controls-form .input-box > input, #controls #controls-form .input-box > select, #controls #controls-form .input-box > option {
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+        padding: 1rem; }
+      #controls #controls-form .input-box > select {
+        background: #fefefe;
+        font-size: 0.75rem; }
+    #controls #controls-form #submitChanges, #controls #controls-form #resetChanges {
+      background: #0934ff;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      width: 100%; }
+    #controls #controls-form #resetChanges {
+      background: #7f95ff; }
   #controls:target {
     height: 100%; }
     #controls:target #controls-form {
@@ -193,37 +223,6 @@ main {
     color: #eee; }
   #controls #panel-open, #controls #panel-close {
     display: none; }
-
-#controls-form {
-  display: none; }
-  #controls-form .input-box {
-    padding: 0.5rem 0;
-    text-align: center; }
-    #controls-form .input-box > label {
-      font-size: 1.5rem;
-      white-space: nowrap; }
-    #controls-form .input-box > input {
-      text-align: center; }
-    #controls-form .input-box > input, #controls-form .input-box > select, #controls-form .input-box > option {
-      border-radius: 1rem;
-      margin-top: 0.5rem;
-      padding: 1rem; }
-    #controls-form .input-box > select {
-      background: #fefefe;
-      font-size: 0.75rem; }
-  #controls-form #submitChanges, #controls-form #resetChanges {
-    background: #0934ff;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    padding: 1rem 0;
-    width: 100%; }
-  #controls-form #resetChanges {
-    background: #7f95ff; }
 
 #main-canvas {
   height: 100%;
@@ -305,6 +304,28 @@ footer {
       transition: all 0.5s ease-in-out;
       width: 5vw;
       height: inherit; }
+      main #controls #controls-form {
+        display: none; }
+        main #controls #controls-form .form-column {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          main #controls #controls-form .form-column .input-box {
+            padding: 1rem 2rem; }
+            main #controls #controls-form .form-column .input-box > label {
+              font-size: 1rem;
+              white-space: nowrap; }
+            main #controls #controls-form .form-column .input-box > input, main #controls #controls-form .form-column .input-box > select, main #controls #controls-form .form-column .input-box > option {
+              border-radius: 0.25rem;
+              margin-top: 0.5rem;
+              padding: 1rem; }
+            main #controls #controls-form .form-column .input-box > input {
+              width: 7.5vw; }
+            main #controls #controls-form .form-column .input-box > select {
+              background: #fefefe;
+              font-size: 0.75rem;
+              padding: 1rem;
+              width: 100%; }
       main #controls:target {
         width: 100%;
         height: inherit; }
@@ -329,28 +350,6 @@ footer {
         position: absolute;
         top: 0.5rem;
         right: 1rem; }
-    main #controls-form {
-      display: none; }
-      main #controls-form .form-column {
-        display: flex;
-        flex-direction: column;
-        align-items: center; }
-        main #controls-form .form-column .input-box {
-          padding: 1rem 2rem; }
-          main #controls-form .form-column .input-box > label {
-            font-size: 1rem;
-            white-space: nowrap; }
-          main #controls-form .form-column .input-box > input, main #controls-form .form-column .input-box > select, main #controls-form .form-column .input-box > option {
-            border-radius: 0.25rem;
-            margin-top: 0.5rem;
-            padding: 1rem; }
-          main #controls-form .form-column .input-box > input {
-            width: 7.5vw; }
-          main #controls-form .form-column .input-box > select {
-            background: #fefefe;
-            font-size: 0.75rem;
-            padding: 1rem;
-            width: 100%; }
     main #submitChanges, main #resetChanges {
       max-width: 80%; }
     main #main-canvas {
