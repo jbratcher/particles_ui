@@ -1,8 +1,8 @@
 # Particles UI
 
-A UI inspired by the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) Library
+A UI extending the [Canvas Particles](https://github.com/jbratcher/canvas-particles-js) library
 
-Customize your own particle canvas and get the js snippet for use in your own projects!
+Customize your own canvas with particles and get the js snippet for use in your own projects.
 
 [Demo](https://jbratcher.github.io/particles_ui/#)
 
@@ -50,7 +50,7 @@ gulp clean:dist
 
 ## Features:
 
-* Uses Canvas Particle library to generate colored particles as base/default canvas
+* Uses Canvas Particles to generate colored particles as base/default canvas
 * Uses HTML5 canvas to display particles
 * Flexbox w/ media queries for responsiveness
 * JS animation frames to continually update animation
