@@ -294,7 +294,6 @@ footer {
   main {
     box-shadow: none;
     flex-direction: row;
-    position: relative;
     z-index: 1; }
     main #controls {
       box-shadow: none;
@@ -327,8 +326,8 @@ footer {
               padding: 1rem;
               width: 100%; }
       main #controls:target {
-        height: inherit;
-        width: 100%; }
+        width: 100%;
+        height: inherit; }
         main #controls:target #panel-open {
           display: none; }
         main #controls:target #controls-form {
