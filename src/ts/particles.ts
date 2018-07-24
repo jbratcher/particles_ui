@@ -10,7 +10,7 @@ canvas.height = canvas.clientHeight;
 
 const ctx = canvas.getContext("2d");
 
-// Get button element
+// Get button elementss
 
 const submitButton = document.querySelector('#submitChanges');
 

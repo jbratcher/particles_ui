@@ -5,7 +5,7 @@ canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 // Set 2D context
 var ctx = canvas.getContext("2d");
-// Get button element
+// Get button elementss
 var submitButton = document.querySelector('#submitChanges');
 var resetButton = document.querySelector('#resetChanges');
 // Event Listeners
